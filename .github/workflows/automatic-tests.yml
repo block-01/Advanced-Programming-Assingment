@@ -1,0 +1,21 @@
+name: Pytest
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-python@v3
+    - uses: actions/checkout@v3
+    - name: Python setup
+      run: |
+        echo "Ensuring PIP is up to date"
+        python -m pip install --upgrade pip
+        echo "Installing all PIP packages inside of requirements.txt"
+        pip install -r requirements.txt
+    - name: Run Pytest
+      run: pytest -vs
