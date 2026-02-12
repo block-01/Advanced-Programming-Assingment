@@ -27,7 +27,8 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    "__init__.py"
 ]
 
 line-length = 100
-indent-width = 8
+indent-width = 4
