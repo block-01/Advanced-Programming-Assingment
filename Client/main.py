@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from argparse import ArgumentParser
 from term_ui import main_tui
+from api import app
 
 if __name__ == "__main__":
     arg_pars: ArgumentParser = (
@@ -22,3 +23,5 @@ if __name__ == "__main__":
 
     if args.settings:
         main_tui.main_menu()
+    else:
+        app.run(host="0.0.0.0", port=5000)

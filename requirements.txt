@@ -3,3 +3,5 @@ pytest
 pyyaml
 psutil
 simple_term_menu
+flask
+requests
