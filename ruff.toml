@@ -30,5 +30,9 @@ exclude = [
     "__init__.py"
 ]
 
+lint.ignore = [
+    "E401"
+]
+
 line-length = 100
 indent-width = 4
