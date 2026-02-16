@@ -1,0 +1,14 @@
+FROM ubuntu:rolling
+EXPOSE 25580
+
+# set the working directory of the container.
+WORKDIR /usr/local/app
+# copy the required files over.
+COPY target/Application-Name-CHANGE.jar /usr/local/app/Application-Name-CHANGE.jar
+
+RUN apt-get update && apt-get install -y default-jre
+# sanity test to ensure that Java is working properly.
+RUN java --version
+
+# Runs this command when the container is started.
+CMD ["java", "-jar", "/usr/local/app/Application-Name-CHANGE.jar"]
