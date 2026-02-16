@@ -1,3 +1,7 @@
+"""
+Tests that the Flask API functions properly returning the expected valve when ran.
+"""
+
 from typing import Any, Generator
 
 from flask.testing import FlaskClient
