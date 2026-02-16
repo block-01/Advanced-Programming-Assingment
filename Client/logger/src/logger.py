@@ -1,7 +1,25 @@
 import datetime
 import pytest
+from enum import Enum
 
 time = datetime.datetime.now()
+
+
+class request_type(Enum):
+    """Types of API requests being made."""
+
+    GET = "GET"
+    PUT = "PUT"
+
+
+def api(api: str, request_type: request_type) -> None:
+    """api
+
+    Args:
+        api: The name of the api that is being requested.
+        request_type: The type of API request being made (GET or PUT)
+    """
+    print("\033[0;36m" + f"[{time}]API: {request_type.name} request made to {api}" + "\033[0m")
 
 
 def debug(message: str) -> None:

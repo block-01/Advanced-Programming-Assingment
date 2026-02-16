@@ -4,6 +4,18 @@ This python package is a basic logger for logging events to the terminal and sav
 
 ## Functions
 
+### API
+
+This logs information about the api to the terminal in cyan.
+
+#### Example
+
+```python
+from logger import logger
+
+logger.api("/api/logger/example", logger.request_type.GET)
+```
+
 ### Debug
 
 This logs debug messages to the terminal outputting them in purple.
