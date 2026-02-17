@@ -1,3 +1,7 @@
+"""
+Contains classes and functions to fetch information about the system it is being ran on.
+"""
+
 import os, psutil
 
 

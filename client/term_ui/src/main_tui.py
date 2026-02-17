@@ -1,3 +1,7 @@
+"""
+Functions related to the terminal user interface for managing the server-side application.
+"""
+
 from simple_term_menu import TerminalMenu
 from sys_info import sys_info
 import time
@@ -22,7 +26,7 @@ def main_menu() -> bool:
         while not main_menu_exit:
             menu = main_menu.show()
             if menu == 0:
-                display_info()
+                _display_info()
             elif menu == 1:
                 print("Settings selected")
                 time.sleep(5)
@@ -35,22 +39,22 @@ def main_menu() -> bool:
         return False
 
 
-def display_info():
+def _display_info():
     """Display client system info"""
 
     info_menu: str = f"""
 OS Info:
-\tHostname: {sys_info.os_software.os_hostname}
-\tOS platform: {sys_info.os_software.os_platform}
-\tOS shell type: {sys_info.os_software.os_shell}
-\tOS version: {sys_info.os_software.os_version}
-\tIP: #TODO
+  Hostname: {sys_info.os_software.os_hostname}
+  OS platform: {sys_info.os_software.os_platform}
+  OS shell type: {sys_info.os_software.os_shell}
+  OS version: {sys_info.os_software.os_version}
+  IP: #TODO
 
 Hardware Info:
-\tCPU architecture: {sys_info.sys_hardware.os_cpu_arch}
-\tCPU cores: #TODO
-\tCPU clock speed: #TODO
-\tRAM: {sys_info.sys_hardware.os_hard_ram}
+  CPU architecture: {sys_info.sys_hardware.os_cpu_arch}
+  CPU cores: #TODO
+  CPU clock speed: #TODO
+  RAM: {sys_info.sys_hardware.os_hard_ram}
 	"""
 
     options = ["[b] Back to Main Menu"]
