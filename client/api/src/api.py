@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 
 @app.route("/api/info/full")
-def _system_info_full() -> dict[str, str]:
+def _system_info_full() -> dict[str, str | int]:
     """Full system info
 
     Request type: GET
@@ -25,17 +25,17 @@ def _system_info_full() -> dict[str, str]:
     """
     logger.api("/api/info/full", logger.request_type.GET)
     return {
-        "os_platform": sys_info.os_software.os_platform,
-        "os_version": sys_info.os_software.os_version,
-        "os_hostname": sys_info.os_software.os_hostname,
-        "os_shell": sys_info.os_software.os_shell,
-        "os_ip": sys_info.os_software.os_ip,
-        "os_mac_address": sys_info.os_software.os_mac_address,
-        "os_cpu_arch": sys_info.sys_hardware.os_cpu_arch,
-        "os_cpu_cores": sys_info.sys_hardware.os_cpu_cores,
-        "os_cpu_core_clock": sys_info.sys_hardware.os_cpu_core_clock,
-        "os_cpu_threads": sys_info.sys_hardware.os_cpu_threads,
-        "os_hard_ram": sys_info.sys_hardware.os_hard_ram,
+        "os_version": sys_info.software.os.version,
+        "os_hostname": sys_info.software.os.hostname,
+        "os_shell": sys_info.software.os.shell,
+        "net_ip": sys_info.software.network.net_ip,
+        "net_mac_address": sys_info.software.network.net_mac_address,
+        "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+        "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+        "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+        "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+        "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+        "os_hard_ram": sys_info.sys_hardware.ram.size,
     }
 
 
@@ -52,12 +52,45 @@ def _system_info_os() -> dict[str, str]:
     """
     logger.api("/api/info/os", logger.request_type.GET)
     return {
-        "os_platform": sys_info.os_software.os_platform,
-        "os_version": sys_info.os_software.os_version,
-        "os_hostname": sys_info.os_software.os_hostname,
-        "os_shell": sys_info.os_software.os_shell,
-        "os_ip": sys_info.os_software.os_ip,
-        "os_mac_address": sys_info.os_software.os_mac_address,
+        "os_platform": sys_info.software.os.hostname,
+        "os_version": sys_info.software.os.version,
+        "os_hostname": sys_info.software.os.hostname,
+        "os_shell": sys_info.software.os.shell,
+        "net_ip": sys_info.software.network.net_ip,
+        "net_mac_address": sys_info.software.network.net_mac_address,
+    }
+
+
+@app.route("/api/info/os/usage")
+def _system_info_os_usage() -> dict[str, str]:
+    """OS usage info
+
+    Request type: GET
+
+    Path: /api/info/os/usage
+
+    Return:
+        Information about the usage of the OS running on the server.
+    """
+    logger.api("/api/info/os/usage", logger.request_type.GET)
+    return {"os_uptime": sys_info.software.os.usage.uptime}
+
+
+@app.route("/api/info/os/network")
+def _system_info_os_network() -> dict[str, str]:
+    """network info
+
+    Request type: GET
+
+    Path: /api/info/os/network
+
+    Return:
+        Information about servers network.
+    """
+    logger.api("/api/info/os/network", logger.request_type.GET)
+    return {
+        "net_ip": sys_info.software.network.net_ip,
+        "net_mac_address": sys_info.software.network.net_mac_address,
     }
 
 
@@ -74,11 +107,86 @@ def _system_info_hardware() -> dict[str, str]:
     """
     logger.api("/api/info/hardware", logger.request_type.GET)
     return {
-        "os_cpu_arch": sys_info.sys_hardware.os_cpu_arch,
-        "os_cpu_cores": sys_info.sys_hardware.os_cpu_cores,
-        "os_cpu_core_clock": sys_info.sys_hardware.os_cpu_core_clock,
-        "os_cpu_threads": sys_info.sys_hardware.os_cpu_threads,
-        "os_hard_ram": sys_info.sys_hardware.os_hard_ram,
+        "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+        "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+        "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+        "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+        "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+        "os_hard_ram": sys_info.sys_hardware.ram.size,
+    }
+
+
+@app.route("/api/info/hardware/cpu")
+def _system_info_hardware_cpu() -> dict[str, str]:
+    """CPU info
+
+    Request type: GET
+
+    Path: /api/info/hardware/cpu
+
+    Return:
+        Information about the servers CPU.
+    """
+    logger.api("/api/info/hardware/cpu", logger.request_type.GET)
+    return {
+        "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+        "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+        "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+        "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+        "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+    }
+
+
+@app.route("/api/info/hardware/ram")
+def _system_info_hardware_ram() -> dict[str, str]:
+    """RAM info.
+
+    Request type: GET
+
+    Path: /api/info/hardware/ram
+
+    Return:
+        Information about the servers RAM.
+    """
+    logger.api("/api/info/hardware/ram", logger.request_type.GET)
+    return {
+        "os_hard_ram": sys_info.sys_hardware.ram.size,
+    }
+
+
+@app.route("/api/info/hardware/cpu/usage")
+def _system_info_hardware_cpu_usage() -> dict[str, str | dict[str, str]]:
+    """CPU usage info.
+
+    Request type: GET
+
+    Path: /api/info/hardware/cpu/usage
+
+    Return:
+        Information about the servers CPU usage.
+    """
+    logger.api("/api/info/hardware/cpu/usage", logger.request_type.GET)
+    return {
+        "cpu_usage_per_core": sys_info.sys_hardware.cpu.usage.per_core,
+        "cpu_usage_total": sys_info.sys_hardware.cpu.usage.total,
+    }
+
+
+@app.route("/api/info/hardware/ram/usage")
+def _system_info_hardware_ram_usage() -> dict[str, str]:
+    """RAM usage info.
+
+    Request type: GET
+
+    Path: /api/info/hardware/ram/usage
+
+    Return:
+        Information about the servers RAM usage.
+    """
+    logger.api("/api/info/hardware/ram/usage", logger.request_type.GET)
+    return {
+        "ram_available": sys_info.sys_hardware.ram.usage.available,
+        "ram_used": sys_info.sys_hardware.ram.usage.used,
     }
 
 

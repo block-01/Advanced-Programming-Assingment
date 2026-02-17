@@ -11,34 +11,52 @@ from sys_info import sys_info
 import pytest
 
 expected_api_output_full = {
-    "os_platform": sys_info.os_software.os_platform,
-    "os_version": sys_info.os_software.os_version,
-    "os_hostname": sys_info.os_software.os_hostname,
-    "os_shell": sys_info.os_software.os_shell,
-    "os_ip": sys_info.os_software.os_ip,
-    "os_mac_address": sys_info.os_software.os_mac_address,
-    "os_cpu_arch": sys_info.sys_hardware.os_cpu_arch,
-    "os_cpu_cores": sys_info.sys_hardware.os_cpu_cores,
-    "os_cpu_core_clock": sys_info.sys_hardware.os_cpu_core_clock,
-    "os_cpu_threads": sys_info.sys_hardware.os_cpu_threads,
-    "os_hard_ram": sys_info.sys_hardware.os_hard_ram,
+    "os_version": sys_info.software.os.version,
+    "os_hostname": sys_info.software.os.hostname,
+    "os_shell": sys_info.software.os.shell,
+    "net_ip": sys_info.software.network.net_ip,
+    "net_mac_address": sys_info.software.network.net_mac_address,
+    "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+    "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+    "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+    "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+    "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+    "os_hard_ram": sys_info.sys_hardware.ram.size,
 }
 
-excepted_api_output_os = {
-    "os_platform": sys_info.os_software.os_platform,
-    "os_version": sys_info.os_software.os_version,
-    "os_hostname": sys_info.os_software.os_hostname,
-    "os_shell": sys_info.os_software.os_shell,
-    "os_ip": sys_info.os_software.os_ip,
-    "os_mac_address": sys_info.os_software.os_mac_address,
+expected_api_output_os = {
+    "os_platform": sys_info.software.os.hostname,
+    "os_version": sys_info.software.os.version,
+    "os_hostname": sys_info.software.os.hostname,
+    "os_shell": sys_info.software.os.shell,
+    "net_ip": sys_info.software.network.net_ip,
+    "net_mac_address": sys_info.software.network.net_mac_address,
+}
+
+expected_api_output_network = {
+    "net_ip": sys_info.software.network.net_ip,
+    "net_mac_address": sys_info.software.network.net_mac_address,
 }
 
 expected_api_output_hardware = {
-    "os_cpu_arch": sys_info.sys_hardware.os_cpu_arch,
-    "os_cpu_cores": sys_info.sys_hardware.os_cpu_cores,
-    "os_cpu_core_clock": sys_info.sys_hardware.os_cpu_core_clock,
-    "os_cpu_threads": sys_info.sys_hardware.os_cpu_threads,
-    "os_hard_ram": sys_info.sys_hardware.os_hard_ram,
+    "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+    "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+    "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+    "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+    "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+    "os_hard_ram": sys_info.sys_hardware.ram.size,
+}
+
+expected_api_output_cpu = {
+    "os_cpu_arch": sys_info.sys_hardware.cpu.cpu_arch,
+    "os_cpu_cores": sys_info.sys_hardware.cpu.cpu_cores,
+    "os_cpu_core_clock_max": sys_info.sys_hardware.cpu.cpu_core_clock_max,
+    "os_cpu_core_clock_min": sys_info.sys_hardware.cpu.cpu_core_clock_min,
+    "os_cpu_threads": sys_info.sys_hardware.cpu.cpu_threads,
+}
+
+expected_api_output_ram = {
+    "os_hard_ram": sys_info.sys_hardware.ram.size,
 }
 
 expected_api_output_404 = {"error": 404}
@@ -79,7 +97,40 @@ class TestAPI:
 
         logger.test.test_case_start(self, "Api os info test")
         api = client.get("/api/info/os")
-        assert api.json == excepted_api_output_os
+        assert api.json == expected_api_output_os
+
+    def test_api_info_os_network(self, client) -> None:
+        """Tests that the api returns the OS info.
+
+        Args:
+            client: The flask client being tested
+        """
+
+        logger.test.test_case_start(self, "Api network info test")
+        api = client.get("/api/info/os/network")
+        assert api.json == expected_api_output_network
+
+    def test_api_info_hardware_cpu(self, client) -> None:
+        """Tests that the api returns the hardware info.
+
+        Args:
+            client: The flask client being tested
+        """
+
+        logger.test.test_case_start(self, "Api hardware info test")
+        api = client.get("/api/info/hardware/cpu")
+        assert api.json == expected_api_output_cpu
+
+    def test_api_info_hardware_ram(self, client) -> None:
+        """Tests that the api returns the hardware info.
+
+        Args:
+            client: The flask client being tested
+        """
+
+        logger.test.test_case_start(self, "Api hardware info test")
+        api = client.get("/api/info/hardware/ram")
+        assert api.json == expected_api_output_ram
 
     def test_api_info_hardware(self, client) -> None:
         """Tests that the api returns the hardware info.

@@ -42,9 +42,7 @@ class sys_info:
             class usage:
                 per_core: dict[str, str] = {
                     f"core {i}": f"{percentage}%"
-                    for i, percentage in enumerate(
-                        psutil.cpu_percent(percpu=True, interval=1)
-                    )
+                    for i, percentage in enumerate(psutil.cpu_percent(percpu=True, interval=1))
                 }
 
                 total: str = f"{psutil.cpu_percent()}%"
@@ -53,9 +51,5 @@ class sys_info:
             size: str = f"{round(psutil.virtual_memory().total / (1024.0**3))}GB"
 
             class usage:
-                available: str = (
-                    f"{round(psutil.virtual_memory().available / (1024.0**3))}GB"
-                )
-                used: str = (
-                    f"{round(psutil.virtual_memory().used / (1024.0**3))}GB ({psutil.virtual_memory().percent}%)"
-                )
+                available: str = f"{round(psutil.virtual_memory().available / (1024.0**3))}GB"
+                used: str = f"{round(psutil.virtual_memory().used / (1024.0**3))}GB ({psutil.virtual_memory().percent}%)"
