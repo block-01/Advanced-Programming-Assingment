@@ -240,6 +240,36 @@ def _system_info_hardware_ram_usage() -> tuple[Response, int]:
     )
 
 
+@app.route("/api/reserve-server", methods=["POST"])
+def _reserve_server() -> tuple[Response, int]:
+    """Server reservation.
+
+    Request type: POST
+
+    Path: /api/reserve-server
+
+    Returns:
+        If the server was successfully reserved or not.
+    """
+
+    logger.api("/api/reserve-server", logger.request_type.POST)
+
+    if request.method != "POST":
+        return (
+            jsonify({"error": f"Method '{request.method}' is not valid, please use method 'POST'"}),
+            405,
+        )
+
+    username = request.form.get("username")
+    if not username:
+        return jsonify({"error": "'username' must not be None"}), 400
+    duration = request.form.get("duration")
+    if not duration:
+        return jsonify({"error": "'duration' must not be None"}), 400
+
+    return jsonify({"username": username, "duration": int(duration)}), 200
+
+
 @app.errorhandler(404)
 def _error(error) -> tuple[Response, int]:
     """error

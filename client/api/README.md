@@ -209,3 +209,22 @@ This API call returns all information about the RAM's usage.
   "ram_used": "13GB (81.9%)"
 }
 ```
+
+### Server reservation
+
+Path: **/api/reserve-server**
+
+Request Type: **POST**
+
+This API call is used by the dashboard to reserve a server.
+
+#### Example
+
+**123.0.0.1:5000/api/reserve-server?username=ExampleUser&duration=1**
+
+```json
+{
+  "duration": 1,
+  "username": "ExampleUser"
+}
+```
