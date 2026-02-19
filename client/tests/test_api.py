@@ -65,7 +65,9 @@ expected_api_output_ram: dict[str, str] = {
     "os_hard_ram": sys_info.sys_hardware.ram.size,
 }
 
-expected_api_output_404 = {"error": 404}
+reserve_url: str = "/api/reserve-server"
+expected_api_server_booking: dict[str, str | int] = {"username": "test", "duration": 0}
+
 expected_api_output_404: dict[str, str] = {"error": "Not Found"}
 
 
@@ -311,3 +313,53 @@ class TestApiInfo:
         api = client.get("/invalid_404")
         assert api.status_code == 404
         assert api.json == expected_api_output_404
+
+
+class TestApiServerBooking:
+    def test_api_server_booking(self, client) -> None:
+        """Tests that the server booking api returns a status code of 200
+        and that the arguments inputted are accepted.
+        """
+
+        logger.test.test_case_start(self, "Api server booking")
+        api = client.post(reserve_url, data={"username": "test", "duration": 0})
+        assert api.status_code == 200
+        assert api.json == expected_api_server_booking
+
+    def test_api_server_booking_fail(self, client) -> None:
+        """Tests that the server booking api returns a status code of 400 due to
+        the request missing an argument or arguments are invalid.
+        """
+
+        logger.test.test_case_start(self, "Api server booking invalid input")
+        api = client.post(reserve_url, data={"duration": 0})
+        assert api.status_code == 400
+
+    class TestRequestMethodServerBooking:
+        def test_api_server_booking_fail_get(self, client) -> None:
+            """Tests that the api will return status code 405
+            when using the api with the 'GET' method.
+            """
+
+            logger.test.test_case_start(self, "Api server booking 'GET' method")
+            api = client.get(reserve_url)
+
+            assert api.status_code == 405
+
+        def test_api_server_booking_fail_put(self, client) -> None:
+            """Tests that the api will return status code 405
+            when using the api with the 'PUT' method.
+            """
+
+            logger.test.test_case_start(self, "Api server booking 'PUT' method")
+            api = client.put(reserve_url)
+            assert api.status_code == 405
+
+        def test_api_server_booking_fail_delete(self, client) -> None:
+            """Tests that the api will return status code 405
+            when using the api with the 'DELETE' method.
+            """
+
+            logger.test.test_case_start(self, "Api server booking 'DELETE' method")
+            api = client.delete(reserve_url)
+            assert api.status_code == 405

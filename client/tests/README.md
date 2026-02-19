@@ -104,6 +104,24 @@ Tests that the [Flask](https://flask.palletsprojects.com/en/stable/) [API](/Clie
     - Tests that the api will return a 404 error when the URL is invalid.
     - Intended outcome: **FAIL**
 
+- TestApiServerBooking
+  - test_api_server_booking
+    - Tests that the api call `/api/reserve-server` returns a `200` status code and the expected data when passing in all the correct arguments.
+    - Intended outcome: **PASS**
+  - test_api_server_booking_fail
+    - Tests that the api call `/api/reserve-server` returns a `400` status code when one of the arguments is missing.
+    - Intended outcome: **FAIL**
+  - TestRequestMethodServerBooking
+    - test_api_server_booking_fail_get
+      - Tests that the api call `/api/reserve-server` returns a `405` status code when the `POST` request method is used.
+      - Intended outcome: **FAIL**
+    - test_api_server_booking_fail_put
+      - Tests that the api call `/api/reserve-server` returns a `405` status code when the `PUT` request method is used.
+      - Intended outcome: **FAIL**
+    - test_api_server_booking_fail_delete
+      - Tests that the api call `/api/reserve-server` returns a `405` status code when the `DELETE` request method is used.
+      - Intended outcome: **FAIL**
+
 ### test_logger
 
 Tests that the [logger](/Client/logger/src/logger.py) functions work properly.
