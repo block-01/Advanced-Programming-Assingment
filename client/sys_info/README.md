@@ -8,13 +8,13 @@ from sys_info import sys_info
 
 print(f"""
 OS Info:
-  Hostname: {sys_info.os_software.os_hostname}
-  OS platform: {sys_info.os_software.os_platform}
-  OS shell type: {sys_info.os_software.os_shell}
-  OS version: {sys_info.os_software.os_version}
+  Hostname: {sys_info.software.os.hostname}
+  OS platform: {sys_info.software.os.platform}
+  OS shell type: {sys_info.software.os.shell}
+  OS version: {sys_info.software.os.version}
 
 Hardware Info:
-  CPU architecture: {sys_info.sys_hardware.os_cpu_arch}
-  RAM: {sys_info.sys_hardware.os_hard_ram}
+  CPU architecture: {sys_info.sys_hardware.cpu.cpu_arch}
+  RAM: {sys_info.sys_hardware.ram.size}
  """)
 ```
