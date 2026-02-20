@@ -10,6 +10,11 @@ The Tests are written using the [PyTest](https://docs.pytest.org/en/stable/) fra
 
 Tests that the [Flask](https://flask.palletsprojects.com/en/stable/) [API](/Client/api/src/api.py) works properly.
 
+- TestApiServerStatus
+  - test_api_server_status
+    - Tests that the api call `/api/serverstatus` returns a `200` status code and the expected data.
+    - Intended outcome: **PASS**
+
 - [TestApiInfo](test_api.py)
   - test_api_info_full
     - Tests that the api call `/api/info/full` returns a `200` status code and the expected data.

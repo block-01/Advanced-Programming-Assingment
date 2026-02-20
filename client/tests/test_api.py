@@ -10,6 +10,9 @@ from logger import logger
 from sys_info import sys_info
 import pytest
 
+server_status_url: str = "/api/serverstatus"
+expected_server_status_output: dict[str, str] = {"status": "online"}
+
 full_info_url: str = "/api/info/full"
 expected_api_output_full: dict[str, str] = {
     "os_version": sys_info.software.os.version,
@@ -83,6 +86,16 @@ def client() -> Generator[FlaskClient, Any, None]:
     with app.test_client() as testing_client:
         with app.app_context():
             yield testing_client
+
+
+class TestApiServerStatus:
+    def test_api_server_status(self, client) -> None:
+        """Tests that the server status api returns the expected output."""
+
+        logger.test.test_case_start(self, "Api server status")
+        api = client.get(server_status_url)
+        assert api.status_code == 200
+        assert api.json == expected_server_status_output
 
 
 class TestApiInfo:

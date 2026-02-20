@@ -13,6 +13,20 @@ app = Flask(__name__)
 app.debug = True  # TODO: Disable once development is complete.
 
 
+@app.route("/api/serverstatus", methods=["GET"])
+def _server_status() -> tuple[Response, int]:
+    """Server status
+
+    Request type: GET
+
+    Path: /api/serverstatus
+
+    Return:
+        That the server is online.
+    """
+    return jsonify({"status": "online"}), 200
+
+
 @app.route("/api/info/full", methods=["GET"])
 def _system_info_full() -> tuple[Response, int]:
     """Full system info
