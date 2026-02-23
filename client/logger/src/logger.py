@@ -10,6 +10,7 @@ class request_type(Enum):
 
     GET = "GET"
     PUT = "PUT"
+    POST = "POST"
 
 
 def api(api: str, request_type: request_type) -> None:

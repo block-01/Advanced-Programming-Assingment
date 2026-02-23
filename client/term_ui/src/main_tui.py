@@ -42,20 +42,33 @@ def main_menu() -> bool:
 def _display_info():
     """Display client system info"""
 
+    core_usage = ""
+    for i, perc in sys_info.sys_hardware.cpu.usage.per_core.items():
+        core_usage += f"\n                {i}: {perc}"
     info_menu: str = f"""
-OS Info:
-  Hostname: {sys_info.os_software.os_hostname}
-  OS platform: {sys_info.os_software.os_platform}
-  OS shell type: {sys_info.os_software.os_shell}
-  OS version: {sys_info.os_software.os_version}
-  IP: #TODO
+        OS Info:
+          Hostname: {sys_info.software.os.hostname}
+          OS platform: {sys_info.software.os.platform}
+          OS shell type: {sys_info.software.os.shell}
+          OS version: {sys_info.software.os.version}
+          net_ip: #TODO
 
-Hardware Info:
-  CPU architecture: {sys_info.sys_hardware.os_cpu_arch}
-  CPU cores: #TODO
-  CPU clock speed: #TODO
-  RAM: {sys_info.sys_hardware.os_hard_ram}
-	"""
+        Hardware Info:
+          CPU:
+            CPU architecture: {sys_info.sys_hardware.cpu.cpu_arch}
+            CPU cores: {sys_info.sys_hardware.cpu.cpu_cores}
+            CPU threads: {sys_info.sys_hardware.cpu.cpu_threads}
+            CPU max clock speed: {sys_info.sys_hardware.cpu.cpu_core_clock_max}
+            CPU min clock speed: {sys_info.sys_hardware.cpu.cpu_core_clock_min}
+            Usage:
+              CPU total usage: {sys_info.sys_hardware.cpu.usage.total}
+              CPU per core usage: {core_usage}
+          RAM:
+            RAM: {sys_info.sys_hardware.ram.size}
+            Usage:
+              available: {sys_info.sys_hardware.ram.usage.available}
+              user: {sys_info.sys_hardware.ram.usage.used}
+        	"""
 
     options = ["[b] Back to Main Menu"]
     info_display = TerminalMenu(
