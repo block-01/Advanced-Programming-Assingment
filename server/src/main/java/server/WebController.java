@@ -11,4 +11,10 @@ public class WebController {
 		// Mapping for root page.
 		return "index";
 	}
+
+	@GetMapping("/settings")
+	public String Settings() {
+		// Settings page mapping.
+		return "settings";
+	}
 }
