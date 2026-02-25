@@ -23,4 +23,28 @@ public class WebController {
 		// error page mapping.
 		return "error";
 	}
+
+	@GetMapping("/servers")
+	public String ServersHomePage() {
+		// error page mapping.
+		return "servers/servers_homepage";
+	}
+
+	@GetMapping("/servers/add")
+	public String AddServerPage() {
+		// error page mapping.
+		return "servers/add_server";
+	}
+
+	@GetMapping("/servers/remove")
+	public String RemoveServersPage() {
+		// error page mapping.
+		return "servers/remove_server";
+	}
+
+	@GetMapping("/servers/view")
+	public String ViewServersPage() {
+		// error page mapping.
+		return "servers/view_server";
+	}
 }
