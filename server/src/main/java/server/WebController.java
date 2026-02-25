@@ -17,4 +17,10 @@ public class WebController {
 		// Settings page mapping.
 		return "settings";
 	}
+
+	@GetMapping("/error")
+	public String Error() {
+		// error page mapping.
+		return "error";
+	}
 }
