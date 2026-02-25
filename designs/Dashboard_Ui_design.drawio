@@ -1,0 +1,219 @@
+<mxfile host="65bd71144e" pages="3">
+    <diagram name="Home Page" id="Iit0zWWp26sRZn2ijyHh">
+        <mxGraphModel dx="928" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="850" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-2" value="Dashboard" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="850" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="120" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-4" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-5" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-6" value="Home" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+                    <mxGeometry y="110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="T9B0Zxsa7gRjp1VBz0Uf-7" value="&lt;div&gt;&lt;b&gt;Dashboard Statistics&lt;/b&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Uptime: &amp;lt;duration&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Servers in network: &amp;lt;Number&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Total number of Servers online: &amp;lt;Number&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="170" width="290" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="OurVKbz3EcMgaOHsz2wa" name="View Servers Page">
+        <mxGraphModel dx="1326" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="850" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-2" value="Dashboard" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="850" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="80" width="120" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-4" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+                    <mxGeometry y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-5" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="VocgKOj5lGuh0fs6kBG3-6" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="hnTNptftWfjby-lCwzg2-1" value="View Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A00FF;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="hnTNptftWfjby-lCwzg2-2" value="Add Servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="hnTNptftWfjby-lCwzg2-3" value="Remove Servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-1" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="170" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-2" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-3" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-4" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="170" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-5" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-6" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-7" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="170" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-8" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-9" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-10" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="390" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-11" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-12" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-13" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="390" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-14" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-15" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-16" value="Server name:&lt;div&gt;Hardware Specs:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="390" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-17" value="Book server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZdEyYbaNVHT8JdD9qU8C-18" value="View more details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="550" width="100" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Add Servers Page" id="LUFNmiMVEuGskFafPKpQ">
+        <mxGraphModel dx="928" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-0"/>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-1" parent="Jf3jJfpxGwltMAQU2fC4-0"/>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="80" width="850" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-3" value="Dashboard" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="80" width="850" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="80" width="120" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-5" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-6" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-7" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry y="110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-8" value="View Servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry x="160" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-9" value="Add Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A00FF;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry x="280" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Jf3jJfpxGwltMAQU2fC4-10" value="Remove Servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Jf3jJfpxGwltMAQU2fC4-1">
+                    <mxGeometry x="400" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Remove Servers Page" id="EvRgoJ8LrMeSbEd6k2Cj">
+        <mxGraphModel dx="928" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-0"/>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-1" parent="GNkddBfCai4jo2ybQ2ZI-0"/>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="80" width="850" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-3" value="Dashboard" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="80" width="850" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="80" width="120" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-5" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-6" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-7" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry y="110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-8" value="View Servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry x="160" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-9" value="Add Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry x="280" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="GNkddBfCai4jo2ybQ2ZI-10" value="Remove Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A00FF;" vertex="1" parent="GNkddBfCai4jo2ybQ2ZI-1">
+                    <mxGeometry x="400" y="120" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Settings Page" id="ZcGUAXIGxiaQ6xvPIhwX">
+        <mxGraphModel dx="928" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-0"/>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-1" parent="5hGPXLENN6zfrH8sHUJm-0"/>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="80" width="850" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-3" value="Dashboard" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="80" width="850" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="80" width="120" height="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-5" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-6" value="Settings" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-7" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry y="110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5hGPXLENN6zfrH8sHUJm-8" value="&lt;div&gt;&lt;b&gt;Dashboard Statistics&lt;/b&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Uptime: &amp;lt;duration&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Servers in network: &amp;lt;Number&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Total number of Servers online: &amp;lt;Number&amp;gt;&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="5hGPXLENN6zfrH8sHUJm-1" vertex="1">
+                    <mxGeometry x="190" y="170" width="290" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
