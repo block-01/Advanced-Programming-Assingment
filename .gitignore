@@ -3,3 +3,6 @@ build
 .venv
 __pycache__
 target
+server/node_modules
+server/package-lock.json
+server/node
