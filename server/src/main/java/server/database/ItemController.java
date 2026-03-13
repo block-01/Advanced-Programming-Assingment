@@ -4,6 +4,7 @@ import server.models.Item;
 import server.repository.ItemRepository;
 import server.services.ItemService;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,4 +44,30 @@ public class ItemController {
 
 	@PostMapping("/database/add")
 	public void AddItem(){}
+
+	@GetMapping("/dashboard/fetch_server/{id}")
+	public JSONObject FetchServer(@PathVariable("id") long id){
+		Item item = itemService.GetItem(id);
+
+		JSONObject response_json = new JSONObject();
+
+		response_json.put("server_name", item.GetServerName());
+		response_json.put("os_version", item.GetOsVersion());
+		response_json.put("os_hostname", item.GetOsHostname());
+		response_json.put("os_shell", item.GetOsShell());
+		response_json.put("net_ip", item.GetNetIP());
+		response_json.put("net_mac_address", item.GetNetMacAddress());
+		response_json.put("os_cpu_arch", item.GetCpuArch());
+		response_json.put("os_cpu_cores", item.GetCpuCores());
+		response_json.put("os_cpu_core_clock_max", item.GetCpuCoreClockMax());
+		response_json.put("os_cpu_core_clock_min", item.GetCpuCoreClockMin());
+		response_json.put("os_cpu_threads", item.GetCpuThreads());
+		response_json.put("os_hard_ram", item.GetRam());
+		return response_json;
+	}
+
+	@GetMapping("/dashboard/fetch_item_table_length")
+	public long GetItemLength(){
+		return itemService.GetItemTableLength();
+	}
 }

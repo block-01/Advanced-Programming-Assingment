@@ -5,6 +5,13 @@
 		<link th:href="@{/side_bar.css}" rel="stylesheet" />
 		<link th:href="@{/index.css}" rel="stylesheet" />
 		<link th:href="@{/favicon.ico}" type="image/x-icon" rel="icon" />
+		<link th:href="@{/server.css}" rel="stylesheet" />
+		<script th:src="@{/server.js}" rel="javascript"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				ServerMain();
+			});
+		</script>
 	</head>
 
 <div class="side_nav_bar">
@@ -18,5 +25,11 @@
 			<a th:href="@{/servers/remove}">Remove Server</a>
 		</div>
 	</div>
+</div>
+
+<div style="margin-left:130px;padding:1px 16px;height:1000px;">
+	<body>
+		<div id="server_view"></div>
+	</body>
 </div>
 </html>

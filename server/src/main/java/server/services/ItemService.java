@@ -27,4 +27,8 @@ public class ItemService {
 	public Item AddItem(Item item){
 		return itemRepository.save(item);
 	}
+
+	public long GetItemTableLength(){
+		return itemRepository.count();
+	}
 }

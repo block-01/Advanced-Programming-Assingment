@@ -47,4 +47,10 @@ public class WebController {
 		// error page mapping.
 		return "servers/view_server";
 	}
+
+	@GetMapping("/servers/view/{id}")
+	public String ViewServerPage() {
+		// error page mapping.
+		return "servers/view_server";
+	}
 }
