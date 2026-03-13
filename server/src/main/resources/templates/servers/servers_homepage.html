@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<title>Server side application</title>
-<head>
-	<link th:href="@{/side_bar.css}" rel="stylesheet" />
-	<link th:href="@{/index.css}" rel="stylesheet"/>
-	<link th:href="@{/favicon.ico}" type="image/x-icon" rel="icon"/>
-</head>
+
+	<head>
+		<link th:href="@{/side_bar.css}" rel="stylesheet" />
+		<link th:href="@{/index.css}" rel="stylesheet" />
+		<link th:href="@{/favicon.ico}" type="image/x-icon" rel="icon" />
+	</head>
 
 <div class="side_nav_bar">
-	<a class="active" th:href="@{/}">Home</a>
+	<a th:href="@{/}">Home</a>
 	<a th:href="@{/settings}">Settings</a>
 	<div class="dropdown">
-		<a class="dropbtn" th:href="@{/servers}">Servers</a>
+		<a class="dropbtn active" th:href="@{/servers}">Servers</a>
 		<div class="dropdown-content">
 			<a th:href="@{/servers/view}">View Servers</a>
 			<a th:href="@{/servers/add}">Add Server</a>
@@ -19,5 +19,4 @@
 		</div>
 	</div>
 </div>
-
 </html>

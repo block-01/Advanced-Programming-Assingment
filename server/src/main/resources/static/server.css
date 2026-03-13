@@ -1,0 +1,60 @@
+#server_info {
+	outline: 2px solid #000000;
+	border-radius: 5px;
+	margin: 10px 0;
+	padding: 14px 16px;
+	display: block;
+	overflow: auto;
+	width: 18%;
+	display: inline-block;
+}
+
+p#server_name {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+}
+
+p#os_version {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_hostname {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#net_ip {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_cpu_arch {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_cpu_cores {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_cpu_core_clock_max {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_cpu_core_clock_min {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_cpu_threads {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}
+
+p#os_hard_ram {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+}

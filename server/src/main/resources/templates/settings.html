@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<title>Server side application</title>
+<title>Settings page</title>
+
 <head>
 	<link th:href="@{/side_bar.css}" rel="stylesheet" />
-	<link th:href="@{/index.css}" rel="stylesheet"/>
+	<link th:href="@{/index.css}" rel="stylesheet" />
 	<link th:href="@{/favicon.ico}" type="image/x-icon" rel="icon"/>
 </head>
 
 <div class="side_nav_bar">
-	<a class="active" th:href="@{/}">Home</a>
-	<a th:href="@{/settings}">Settings</a>
+	<a th:href="@{/}">Home</a>
+	<a class="active" th:href="@{/settings}">Settings</a>
 	<div class="dropdown">
 		<a class="dropbtn" th:href="@{/servers}">Servers</a>
 		<div class="dropdown-content">
@@ -19,5 +20,17 @@
 		</div>
 	</div>
 </div>
-
+<div style="margin-left:130px;padding:1px 16px;height:1000px;">
+<h1>H1 test</h1>
+<h2>H2 test</h2>
+<h3>H3 test</h3>
+<h4>H4 test</h4>
+<h5>H5 test</h5>
+<h6>H6 test</h6>
+<p>P test</p>
+<p class="error">P error test</p>
+<p class="success">P success test</p>
+<input>Input test</input>
+<button>Button test</button>
+</div>
 </html>

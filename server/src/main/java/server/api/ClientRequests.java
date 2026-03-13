@@ -16,7 +16,7 @@ import requests.requests;
 public class ClientRequests {
 
 	@GetMapping("/api/client/status")
-	public JSONObject ClientServerStatus(
+	public static JSONObject ClientServerStatus(
 		@RequestParam("TargetIP") String ClientIP
 		){
 		/*
@@ -46,7 +46,7 @@ public class ClientRequests {
 	}
 
 	@GetMapping("/api/client/info")
-	public JSONObject ClientFullInfo(
+	public static JSONObject ClientFullInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
 		/*
