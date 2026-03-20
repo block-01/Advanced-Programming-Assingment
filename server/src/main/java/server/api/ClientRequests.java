@@ -13,24 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 import requests.requests;
 
 @RestController
+/**
+ * API calls to make requests to the server clients.
+ *
+ * @author TODO
+ */
 public class ClientRequests {
 
+	/**
+	 * client status Api.
+	 *
+	 * @url /api/client/status
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return If the client is online.
+	 */
 	@GetMapping("/api/client/status")
 	public static JSONObject ClientServerStatus(
 		@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * client status Api.
-		 *
-		 * API URL: "/api/client/status"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		If the client is online.
-		 */
 
 		String url = ClientIP + "/api/serverstatus";
 		JSONObject api = requests.GET(url);
@@ -45,22 +48,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * Info Api.
+	 *
+	 * @url /api/client/info
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return All info about the system.
+	 */
 	@GetMapping("/api/client/info")
 	public static JSONObject ClientFullInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * Info Api.
-		 *
-		 * API URL: "/api/client/info"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		All info about the system.
-		 */
 
 		String url = ClientIP + "/api/info/full";
 		JSONObject api = requests.GET(url);
@@ -75,22 +76,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * OS info Api.
+	 *
+	 * @url /api/client/info/os
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return OS info.
+	 */
 	@GetMapping("/api/client/info/os")
 	public JSONObject ClientOsInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * OS info Api.
-		 *
-		 * API URL: "/api/client/info/os"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		OS info.
-		 */
 
 		String url = ClientIP + "/api/info/os";
 		JSONObject api = requests.GET(url);
@@ -105,19 +104,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * OS usage Api.
+	 *
+	 * @url /api/client/info/os/usage
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return OS usage statistics.
+	 */
 	@GetMapping("/api/client/info/os/usage")
 	public JSONObject ClientOsUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * OS usage Api.
-		 *
-		 * API URL: "/api/client/info/os/usage"
-		 * API call type : GET
-		 *
-		 * Returns:
-		 * 		OS usage statistics.
-		 */
 
 		String url = ClientIP + "/api/info/os/usage";
 		JSONObject api = requests.GET(url);
@@ -132,22 +132,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * Network info Api.
+	 *
+	 * @url /api/client/info/os/network
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return Networking info.
+	 */
 	@GetMapping("/api/client/info/os/network")
 	public JSONObject ClientOsNetworkInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * Network info Api.
-		 *
-		 * API URL: "/api/client/info/os/network"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		Networking info.
-		 */
 
 		String url = ClientIP + "/api/info/os/network";
 		JSONObject api = requests.GET(url);
@@ -162,22 +160,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * Hardware info Api.
+	 *
+	 * @url /api/client/info/hardware
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return Info about the hardware.
+	 */
 	@GetMapping("/api/client/info/hardware")
 	public JSONObject ClientHardwareInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * Hardware info Api.
-		 *
-		 * API URL: "/api/client/info/hardware"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		Info about the hardware.
-		 */
 
 		String url = ClientIP + "/api/info/hardware";
 		JSONObject api = requests.GET(url);
@@ -192,22 +188,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * CPU info Api.
+	 *
+	 * @url /api/client/info/hardware/cpu
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return Info about the CPU.
+	 */
 	@GetMapping("/api/client/info/hardware/cpu")
 	public JSONObject ClientHardwareCpuInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * CPU info Api.
-		 *
-		 * API URL: "/api/client/info/hardware/cpu"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		Info about the CPU.
-		 */
 
 		String url = ClientIP + "/api/info/hardware/cpu";
 		JSONObject api = requests.GET(url);
@@ -222,22 +216,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * CPU usage Api.
+	 *
+	 * @url /api/client/info/hardware/cpu/usage
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return CPU usage statistics.
+	 */
 	@GetMapping("/api/client/info/hardware/cpu/usage")
 	public JSONObject ClientHardwareCpuUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * CPU usage Api.
-		 *
-		 * API URL: "/api/client/info/hardware/cpu/usage"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		CPU usage statistics.
-		 */
 
 		String url = ClientIP + "/api/info/hardware/cpu/usage";
 		JSONObject api = requests.GET(url);
@@ -253,22 +245,20 @@ public class ClientRequests {
 
 	}
 
+	/**
+	 * RAM Info Api.
+	 *
+	 * @url /api/client/info/hardware/ram
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return Info about the RAM.
+	 */
 	@GetMapping("/api/client/info/hardware/ram")
 	public JSONObject ClientHardwareRamInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * RAM Info Api.
-		 *
-		 * API URL: "/api/client/info/hardware/ram"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		Info about the RAM.
-		 */
 
 		String url = ClientIP + "/api/info/hardware/ram";
 		JSONObject api = requests.GET(url);
@@ -283,22 +273,20 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * RAM usage Api.
+	 *
+	 * @url /api/client/info/hardware/ram/usage
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return The RAM usage statistics.
+	 */
 	@GetMapping("/api/client/info/hardware/ram/usage")
 	public JSONObject ClientHardwareRamUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
-		/*
-		 * RAM usage Api.
-		 *
-		 * API URL: "/api/client/info/hardware/ram/usage"
-		 * API call type : GET
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 *
-		 * Returns:
-		 * 		The RAM usage statistics.
-		 */
 
 		String url = ClientIP + "/api/info/hardware/ram/usage";
 		JSONObject api = requests.GET(url);
@@ -313,26 +301,25 @@ public class ClientRequests {
 		return error;
 	}
 
+	/**
+	 * Server reservation Api.
+	 *
+	 * @url /api/client/reserve_server
+	 * @method POST
+
+	 *
+	 * @param ClientIP  The URL or IP with the port of the target system.
+	 * @param Username: The name of the user who wants to book the server.
+	 * @param Duration: How long the user wants to reserve the server for.
+	 *
+	 * @return The status of the reservation.
+	 */
 	@PostMapping("/api/client/reserve_server")
 	public JSONObject ClientReserveServer(
 			@RequestParam("TargetIP") String ClientIP,
 			@RequestParam("Username") String Username,
 			@RequestParam("Duration") int Duration
 	){
-		/*
-		 * Server reservation Api.
-		 *
-		 * API URL: "/api/client"
-		 * API call type : POST
-		 *
-		 * Args:
-		 * 		TargetIP: The URL or IP with the port of the target system.
-		 * 		Username: The name of the user who wants to book the server.
-		 * 		Duration: How long the user wants to reserve the server for.
-		 *
-		 * Returns:
-		 * 		The status of the reservation.
-		 */
 
 		HashMap<String,String> ApiInput = new HashMap<String,String>();
 		ApiInput.put("username", Username);
