@@ -7,21 +7,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import server.database.ItemController;
 
+/**
+ * Web Controller Class for page mapping
+ *
+ * @author TODO
+ */
 @Controller
 public class WebController {
 
+	/**
+	 * Mapping for root page.
+	 *
+	 * @return index (root) page.
+	 */
 	@GetMapping("/")
 	public String ShowRootPage(){
-		// Mapping for root page.
 		return "index";
 	}
 
+	/**
+	 * Error page mapping.
+	 *
+	 * @return Error page.
+	 */
 	@GetMapping("/error")
 	public String Error() {
-		// error page mapping.
 		return "error";
 	}
 
+	/**
+	 * View Server page mapping.
+	 *
+	 * @param id The ID of the server being viewed.
+	 * @param model The Model that server info gets added to.
+	 * @return Server Info page.
+	 */
 	@GetMapping("/server/{id}")
 	public String ViewServerPage(
 		@PathVariable("id") long id,
