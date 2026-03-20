@@ -122,6 +122,37 @@
 	        <artifactId>maven-surefire-plugin</artifactId>
 	        <version>3.0.0-M9</version>
 	    </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.11.3</version>
+            <configuration>
+                <source>1.8</source>
+                <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+				<tags>
+					<tag>
+						<name>method</name>
+						<placement>m</placement>
+						<head>API Method:</head>
+					</tag>
+					<tag>
+						<name>url</name>
+						<placement>m</placement>
+						<head>API URL:</head>
+					</tag>
+					<tag>
+						<name>testcase</name>
+						<placement>m</placement>
+						<head>Test Case:</head>
+					</tag>
+					<tag>
+						<name>testcasesteps</name>
+						<placement>m</placement>
+						<head>Test Case Steps:</head>
+					</tag>
+				</tags>
+			</configuration>
+        </plugin>
 	</plugins>
 	</build>
 
