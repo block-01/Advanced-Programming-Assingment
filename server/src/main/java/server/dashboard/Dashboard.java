@@ -9,15 +9,35 @@ import server.services.ItemService;
 import server.api.ClientRequests;
 import server.models.Item;
 
+/**
+ * Functions and API calls used by the frontend dashboard.
+ *
+ * @author TODO
+ */
 @Controller
 public class Dashboard {
 
 	private ItemService itemService;
 
+	/**
+	 *
+	 */
 	public Dashboard(ItemService itemService) {
 		this.itemService = itemService;
 	}
 
+	/**
+	 * Add a server to the list
+	 *
+	 * @url /dashboard/add_server
+	 * @method POST
+
+	 *
+	 * @param ServerName The name of the target server.
+	 * @param ServerIP The DNS name or IP address of the server.
+	 *
+	 * @return The next page to load.
+	 */
 	@PostMapping("/dashboard/add_server")
 	public String AddServer(
 		@RequestParam("ServerName") String ServerName,
