@@ -21,8 +21,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file server/pom.xml
+    - name: Generate Documentation
+      run: mvn javadoc:javadoc --file server/pom.xml
     - name: Save build artifacts.
       uses: actions/upload-artifact@v4
       with:
-        path: server/target/*.jar
+        path:  |
+          server/target/*.jar
+          server/target/reports/apidocs/
         retention-days: 7
