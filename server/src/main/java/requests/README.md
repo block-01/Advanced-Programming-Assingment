@@ -43,5 +43,5 @@ String ClientIP = "localhost:5000";
 HashMap<String,String> ApiInput = new HashMap<String,String>();
 ApiInput.put("username", "DemoUsername");
 ApiInput.put("duration", "1");
-requests.GET(ClientIP + "/api/info/hardware/ram", ApiInput);
+requests.POST(ClientIP + "/api/info/hardware/ram", ApiInput);
 ```

@@ -13,20 +13,24 @@ import java.util.Map;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
+/**
+ * Class of functions related to making API requests.
+ *
+ * @author TODO
+ */
 public class requests {
 
 	static HttpClient client = HttpClient.newHttpClient();
 
+	/**
+	 * GET api call
+	 *
+	 * @param url The IP/URL to the server
+	 *
+	 * @return The contents of what was returned from the API.
+	 */
 	public static JSONObject  GET(String url){
-		/*
-		 * GET api call
-		 *
-		 * Args:
-		 * 		url: The IP/URL to the server
-		 *
-		 * Returns:
-		 * 		The contents of what was returned from the API.
-		 */
+
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://"+url)).GET().build();
 		try{
 
@@ -44,16 +48,16 @@ public class requests {
 		}
 	}
 
+	/**
+	 * POST api call
+	 *
+	 * @param url  The IP/URL to the server
+	 * @param args Any additional arguments
+	 *
+	 * @return The contents of what was returned from the API.
+	 */
 	public static JSONObject POST(String url, HashMap<String, String> args) {
-		/* POST api call
-		 *
-		 * Args:
-		 * 		url: The IP/URL to the server
-		 * 		args: Any additional arguments
-		 *
-		 * Returns:
-		 * 		The contents of what was returned from the API.
-		 */
+
 		HttpRequest request = HttpRequest.newBuilder()
 			.uri(URI.create("http://" + url))
 			.header("Content-Type", "application/x-www-form-urlencoded")
@@ -75,16 +79,21 @@ public class requests {
 
 }
 
+/**
+ * Helper functions for the requests class.
+ *
+ * @author Lily Wilks
+ */
 class RequestHelpers{
+
+	/**
+	 * Converts a Hash map to the required input for an API call.
+	 *
+	 * @param args The arguments to be converted into a format useable by the API call.
+	 *
+	 * @return A format that can be used by the API call.
+	 */
 	static String HashMapToApiInput(HashMap<String, String> args){
-		/* Converts a Hash map to the required input for an API call.
-		 *
-		 * Args:
-		 * 		args: The arguments to be converted into a format useable by the API call.
-		 *
-		 * Returns:
-		 * 		A format that can be used by the API call.
-		 */
 		StringBuilder FormBuilder = new StringBuilder();
 
 		for (Map.Entry<String, String> entry : args.entrySet()){
