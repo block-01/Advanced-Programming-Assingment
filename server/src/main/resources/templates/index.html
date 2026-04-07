@@ -2,22 +2,97 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <title>Server side application</title>
 <head>
-	<link th:href="@{/side_bar.css}" rel="stylesheet" />
-	<link th:href="@{/index.css}" rel="stylesheet"/>
-	<link th:href="@{/favicon.ico}" type="image/x-icon" rel="icon"/>
+	<link th:href="@{/css/side_bar.css}" rel="stylesheet" />
+	<link th:href="@{/css/index.css}" rel="stylesheet"/>
+	<link th:href="@{/css/add_server.css}" rel="stylesheet" />
+	<link th:href="@{/css/button.css}" rel="stylesheet" />
+	<link th:href="@{/css/server.css}" rel="stylesheet" />
+
+	<link th:href="@{/assets/favicon.ico}" type="image/x-icon" rel="icon"/>
+
+	<script th:src="@{/scripts/common_functions.js}" rel="javascript"></script>
+	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			ServerMain();
+		});
+	</script>
+	<script th:src="@{/scripts/darkmode.js}" rel="javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			funcCheckDarkModeToggle();
+		});
+	</script>
 </head>
 
-<div class="side_nav_bar">
-	<a class="active" th:href="@{/}">Home</a>
-	<a th:href="@{/settings}">Settings</a>
-	<div class="dropdown">
-		<a class="dropbtn" th:href="@{/servers}">Servers</a>
-		<div class="dropdown-content">
-			<a th:href="@{/servers/view}">View Servers</a>
-			<a th:href="@{/servers/add}">Add Server</a>
-			<a th:href="@{/servers/remove}">Remove Server</a>
-		</div>
+<button onclick="document.getElementById('add_server').style.display='block'" style="width:auto;"><svg id="add_server_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
+<button onclick="document.getElementById('settings').style.display='block'" style="width:auto;"><svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
+
+<div id="server_view"></div>
+
+<div id="add_server" class="modal">
+	<div class="modal-content animate">
+		<form action="#" th:action="@{/dashboard/add_server}" method="post">
+			<div class="container">
+				<p>
+					TODO: Info about adding servers.
+				</p>
+				<label for="ServerName">Server name:</label>
+				<input class="AddServer" type="text" id="ServerName" name="ServerName" th:object="${ServerName}" required>
+				<br>
+				<label for="ServerIP">Server IP/URL (e.g. 192.168.0.1:5000 or example.com:5000):</label>
+				<input class="AddServer" type="text" id="ServerIP" name="ServerIP" th:object="${ServerIP}" required>
+				<button id="SubmitServer" class="non-destructive" type="submit">Add Server</button>
+				<button class="destructive" type="reset">Reset</button>
+			</div>
+
+			<div class="container">
+				<button
+					type="button"
+					onclick="document.getElementById('add_server').style.display='none'"
+					class="cancelbtn">Cancel
+				</button>
+			</div>
+		</form>
 	</div>
 </div>
 
+<div id="settings" class="modal">
+	<div class="modal-content animate">
+		<div class="container">
+			<label class="switch">
+				<input type="checkbox" onclick="funcDarkModeToggle()">
+				<span class="slider">Dark/Light mode toggle</span>
+			</label>
+
+			<h1>H1 test</h1>
+			<h2>H2 test</h2>
+			<h3>H3 test</h3>
+			<h4>H4 test</h4>
+			<h5>H5 test</h5>
+			<h6>H6 test</h6>
+			<p>P test</p>
+			<p class="error">P error test</p>
+			<p class="success">P success test</p>
+			<input>Input test</input>
+			<button>Button test</button>
+		</div>
+
+		<div class="container">
+			<button
+				type="button"
+				onclick="document.getElementById('settings').style.display='none'"
+				class="cancelbtn">Close
+			</button>
+		</div>
+	</div>
+</div>
 </html>
+
+<script>
+	AddServerClickOff();
+</script>
+
+<script>
+	SettingsClickOff();
+</script>
