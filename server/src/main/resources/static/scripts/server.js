@@ -76,6 +76,22 @@ function AddServer(contents) {
 		os_hard_ram.innerHTML = "RAM size: " + contents.os_hard_ram;
 		server_info.append(os_hard_ram);
 
+		delete_button = document.createElement("button");
+		delete_button.id = "delete_button";
+		// delete_button.onclick = "document.getElementById('" + "').style.display='block'";
+		delete_button.style = "width:auto;";
+
+		view_button = document.createElement("button");
+		view_button.id = "view_button";
+		// view_button.onclick = "document.getElementById('" + "').style.display='block'";
+		view_button.style = "width:auto;";
+
+		delete_button.innerHTML = '<svg id="remove_server_icon" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/delete_server_light.png" /></svg>';
+		view_button.innerHTML = '<svg id="view_server_icon" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/view_server_light.png" /></svg>';
+
+		server_info.append(delete_button);
+		server_info.append(view_button);
+
 		return server_info;
 	} catch (error){
 		console.error(error.message)
