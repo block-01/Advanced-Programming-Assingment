@@ -16,18 +16,18 @@ import org.springframework.ui.Model;
 @RestController
 public class ItemController {
 
-	private ItemService itemService;
+	private static ItemService itemService;
 
-	public ItemController(ItemService itemService) {
-		this.itemService = itemService;
-	}
+		public ItemController(ItemService itemService) {
+			ItemController.itemService = itemService;
+		}
 
-	@GetMapping("/database/{id}")
-	public void GetItem(
-		@PathVariable("id") long id,
-		Model model
-	){
-		Item item = itemService.GetItem(id);
+		@GetMapping("/database/{id}")
+		public static void GetItem(
+			@PathVariable("id") long id,
+			Model model
+		){
+			Item item = itemService.GetItem(id);
 		model.addAttribute("ServerName", item.GetServerName());
 		model.addAttribute("Hostname", item.GetOsHostname());
 		model.addAttribute("OsVersion", item.GetOsVersion());

@@ -18,7 +18,7 @@ async function ServerMain() {
 				break;
 			}
 
-			const ServerInfoChild = AddServer(result);
+			const ServerInfoChild = AddServer(result, i);
 			if (ServerInfoChild == null || !ServerInfoChild) {
 				break;
 			}
@@ -30,7 +30,7 @@ async function ServerMain() {
 	}
 }
 
-function AddServer(contents) {
+function AddServer(contents, id) {
 
 	try{
 		const server_info = document.createElement("div");
@@ -78,16 +78,17 @@ function AddServer(contents) {
 
 		delete_button = document.createElement("button");
 		delete_button.id = "delete_button";
+		delete_button.title="Remove Server from Dashboard";
 		// delete_button.onclick = "document.getElementById('" + "').style.display='block'";
 		delete_button.style = "width:auto;";
 
 		view_button = document.createElement("button");
 		view_button.id = "view_button";
-		// view_button.onclick = "document.getElementById('" + "').style.display='block'";
+		view_button.title="View more information about the Server."
 		view_button.style = "width:auto;";
 
 		delete_button.innerHTML = '<svg id="remove_server_icon" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/delete_server_light.png" /></svg>';
-		view_button.innerHTML = '<svg id="view_server_icon" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/view_server_light.png" /></svg>';
+		view_button.innerHTML = '<a href="/server/' + id +'"><svg id="view_server_icon" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/view_server_light.png" /></svg></a>';
 
 		server_info.append(delete_button);
 		server_info.append(view_button);

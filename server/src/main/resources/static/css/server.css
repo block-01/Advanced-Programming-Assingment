@@ -13,6 +13,22 @@
 	outline: 2px solid #ffffff;
 }
 
+
+#server_info_full {
+	outline: 2px solid #000000;
+	border-radius: 5px;
+	margin: 10px 0;
+	padding: 14px 16px;
+	display: block;
+	overflow: auto;
+	width: auto;
+	display: inline-block;
+}
+
+.dark-mode #server_info_full {
+	outline: 2px solid #ffffff;
+}
+
 p#server_name {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 20px;

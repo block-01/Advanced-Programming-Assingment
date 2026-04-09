@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	<link th:href="@{/css/side_bar.css}" rel="stylesheet" />
+	<link th:href="@{/css/index.css}" rel="stylesheet" />
+	<link th:href="@{/css/add_server.css}" rel="stylesheet" />
+	<link th:href="@{/css/button.css}" rel="stylesheet" />
+	<link th:href="@{/css/server.css}" rel="stylesheet" />
+
+	<link th:href="@{/assets/favicon.ico}" type="image/x-icon" rel="icon" />
+
+	<script th:src="@{/scripts/common_functions.js}" rel="javascript"></script>
+	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			ServerMain();
+		});
+	</script>
+	<script th:src="@{/scripts/darkmode.js}" rel="javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			funcCheckDarkModeToggle();
+		});
+	</script>
+	</head>
+
+	<button title="Dashboard Home" style="width:auto;">
+		<a th:href="@{/}">
+			<svg id="home_page_button_icon" height="40"width="40" xmlns="http://www.w3.org/2000/svg">
+			</svg>
+		</a>
+	</button>
+
+	<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;">
+		<svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+		</svg>
+	</button>
+
+	<div id="settings" class="modal">
+		<div class="modal-content animate">
+			<div class="container">
+				<label class="switch" title="Toggle Dark and Light mode">
+					<input type="checkbox" onclick="funcDarkModeToggle()">
+					<span class="slider">Dark/Light mode toggle</span>
+				</label>
+			</div>
+
+			<div class="container">
+				<button title="Close" type="button" onclick="document.getElementById('settings').style.display='none'"
+					class="cancelbtn">Close
+				</button>
+			</div>
+		</div>
+	</div>
+	</body>
+		<div id="server_info_full">
+			<h4>Server Name: [[${ServerName}]]</h4>
+			<p>Hostname: [[${Hostname}]]</p>
+			<p>OS Version: [[${OsVersion}]]</p>
+			<p>Shell Type: [[${OsShell}]]</p>
+			<p>Device IP: [[${NetIP}]]</p>
+			<p>Device Mac Address: [[${NetMacAddress}]]</p>
+			<p>CPU Architecture: [[${CpuArch}]]</p>
+			<p>CPU Core Count: [[${CpuCores}]]</p>
+			<p>Maximum CPU Core Clock Speed: [[${CpuCoreClockMax}]]</p>
+			<p>Minimum CPU Core Clock Speed: [[${CpuCoreClockMin}]]</p>
+			<p>Number of CPU Threads: [[${CpuThreads}]]</p>
+			<p>Size of RAM: [[${Ram}]]</p>
+		</div>
+	<body>
+</html>
+
+<script>
+	SettingsClickOff();
+</script>
