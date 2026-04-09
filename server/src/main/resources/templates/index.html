@@ -25,8 +25,8 @@
 	</script>
 </head>
 
-<button onclick="document.getElementById('add_server').style.display='block'" style="width:auto;"><svg id="add_server_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
-<button onclick="document.getElementById('settings').style.display='block'" style="width:auto;"><svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
+<button title="Add server to the dashboard" onclick="document.getElementById('add_server').style.display='block'" style="width:auto;"><svg id="add_server_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
+<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;"><svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg"></svg></button>
 
 <div id="server_view"></div>
 
@@ -42,12 +42,13 @@
 				<br>
 				<label for="ServerIP">Server IP/URL (e.g. 192.168.0.1:5000 or example.com:5000):</label>
 				<input class="AddServer" type="text" id="ServerIP" name="ServerIP" th:object="${ServerIP}" required>
-				<button id="SubmitServer" class="non-destructive" type="submit">Add Server</button>
-				<button class="destructive" type="reset">Reset</button>
+				<button title="Add Server" id="SubmitServer" class="non-destructive" type="submit">Add Server</button>
+				<button title="Reset" class="destructive" type="reset">Reset</button>
 			</div>
 
 			<div class="container">
 				<button
+					title="Cancel"
 					type="button"
 					onclick="document.getElementById('add_server').style.display='none'"
 					class="cancelbtn">Cancel
@@ -60,7 +61,7 @@
 <div id="settings" class="modal">
 	<div class="modal-content animate">
 		<div class="container">
-			<label class="switch">
+			<label class="switch" title="Toggle Dark and Light mode">
 				<input type="checkbox" onclick="funcDarkModeToggle()">
 				<span class="slider">Dark/Light mode toggle</span>
 			</label>
@@ -80,6 +81,7 @@
 
 		<div class="container">
 			<button
+				title="Close"
 				type="button"
 				onclick="document.getElementById('settings').style.display='none'"
 				class="cancelbtn">Close
