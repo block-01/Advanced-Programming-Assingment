@@ -11,7 +11,7 @@ import server.repository.ItemRepository;
 /**
  * Functions for interacting with the Database.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @Service
 public class ItemService {

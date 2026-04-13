@@ -16,7 +16,7 @@ import requests.requests;
 /**
  * API calls to make requests to the server clients.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 public class ClientRequests {
 

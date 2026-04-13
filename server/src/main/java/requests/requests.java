@@ -16,7 +16,7 @@ import org.json.simple.JSONValue;
 /**
  * Class of functions related to making API requests.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 public class requests {
 

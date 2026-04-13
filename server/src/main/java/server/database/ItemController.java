@@ -22,7 +22,7 @@ import org.springframework.ui.Model;
 /**
  * Item controller class for interacting with the database.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @RestController
 public class ItemController {

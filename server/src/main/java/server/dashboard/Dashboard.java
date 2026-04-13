@@ -12,7 +12,7 @@ import server.models.Item;
 /**
  * Functions and API calls used by the frontend dashboard.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @Controller
 public class Dashboard {

@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
  *
  * The Datatype and related functions for the Item table within the database.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @Entity
 public class Item {

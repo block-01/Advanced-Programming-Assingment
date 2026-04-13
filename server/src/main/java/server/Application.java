@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Main function including dashboard and backend startup.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @SpringBootApplication
 public class Application {

@@ -10,7 +10,7 @@ import server.database.ItemController;
 /**
  * Web Controller Class for page mapping
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @Controller
 public class WebController {

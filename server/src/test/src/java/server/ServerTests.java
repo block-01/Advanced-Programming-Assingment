@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 /**
  * Tests the applications functionality.
  *
- * @author TODO
+ * @author Lily Wilks
  */
 @SpringBootTest
 public class ServerTests {
