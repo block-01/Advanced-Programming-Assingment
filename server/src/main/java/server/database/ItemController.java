@@ -4,8 +4,14 @@ import server.models.Item;
 import server.repository.ItemRepository;
 import server.services.ItemService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,18 +22,21 @@ import org.springframework.ui.Model;
 @RestController
 public class ItemController {
 
+	@Autowired
+	ItemRepository ItemRepo;
+
 	private static ItemService itemService;
 
-		public ItemController(ItemService itemService) {
-			ItemController.itemService = itemService;
-		}
+	public ItemController(ItemService itemService) {
+		ItemController.itemService = itemService;
+	}
 
-		@GetMapping("/database/{id}")
-		public static void GetItem(
-			@PathVariable("id") long id,
-			Model model
-		){
-			Item item = itemService.GetItem(id);
+	@GetMapping("/database/{id}")
+	public static void GetItem(
+		@PathVariable("id") long id,
+		Model model
+	){
+		Item item = itemService.GetItem(id);
 		model.addAttribute("ServerName", item.GetServerName());
 		model.addAttribute("Hostname", item.GetOsHostname());
 		model.addAttribute("OsVersion", item.GetOsVersion());
@@ -69,5 +78,55 @@ public class ItemController {
 	@GetMapping("/dashboard/fetch_item_table_length")
 	public long GetItemLength(){
 		return itemService.GetItemTableLength();
+	}
+
+	/**
+	 * Deletes an Item from the table based off of the items ID.
+	 *
+	 * @param id The ID of the Item within the database to be deleted.
+	 *
+	 * @return If the operation was successfully completed.
+	 */
+	@DeleteMapping("/database/delete/{id}")
+	public ResponseEntity<HttpStatus> DeleteItem(@PathVariable("id") long id){
+		try{
+			if (ItemRepo.existsById(id)){
+				System.out.println("\nDeleted item " + id + " rom the database\n");
+				ItemRepo.deleteById(id);
+				if (ItemRepo.existsById(id) == false)
+				{
+					return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+				}
+			}
+			else {
+				return new ResponseEntity<HttpStatus>(HttpStatus.NOT_FOUND);
+			}
+			return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+
+		} catch (Exception e) {
+			return new ResponseEntity<HttpStatus>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	/**
+	 * Fetches a list of all of the item IDs within the ITEM database table.
+	 *
+	 * @return A list of item IDs.
+	 */
+	@GetMapping("/database/ListIDs")
+	public ArrayList<Long> ListItemIDs(){
+		try{
+
+			ArrayList<Long> ItemIDs = new ArrayList<Long>();
+			List<Item> ItemList = ItemRepo.findAll();
+			for (int size = 0; size < ItemList.size(); size++){
+				ItemIDs.add(ItemList.get(size).GetID());
+			}
+
+			return ItemIDs;
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
 }
