@@ -1,7 +1,11 @@
 package server;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import server.database.ItemController;
 
 @Controller
 public class WebController {
@@ -12,45 +16,18 @@ public class WebController {
 		return "index";
 	}
 
-	@GetMapping("/settings")
-	public String Settings() {
-		// Settings page mapping.
-		return "settings";
-	}
-
 	@GetMapping("/error")
 	public String Error() {
 		// error page mapping.
 		return "error";
 	}
 
-	@GetMapping("/servers")
-	public String ServersHomePage() {
-		// error page mapping.
-		return "servers/servers_homepage";
-	}
-
-	@GetMapping("/servers/add")
-	public String AddServerPage() {
-		// error page mapping.
-		return "servers/add_server";
-	}
-
-	@GetMapping("/servers/remove")
-	public String RemoveServersPage() {
-		// error page mapping.
-		return "servers/remove_server";
-	}
-
-	@GetMapping("/servers/view")
-	public String ViewServersPage() {
-		// error page mapping.
-		return "servers/view_server";
-	}
-
-	@GetMapping("/servers/view/{id}")
-	public String ViewServerPage() {
-		// error page mapping.
-		return "servers/view_server";
+	@GetMapping("/server/{id}")
+	public String ViewServerPage(
+		@PathVariable("id") long id,
+		Model model
+	) {
+		ItemController.GetItem(id, model);
+		return "view_server";
 	}
 }

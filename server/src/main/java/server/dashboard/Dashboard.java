@@ -61,6 +61,6 @@ public class Dashboard {
 		else{
 			System.err.println("unable to find Server");
 		}
-		return "index";
+		return "redirect:/";
 	}
 }

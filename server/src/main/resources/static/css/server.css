@@ -9,6 +9,51 @@
 	display: inline-block;
 }
 
+.dark-mode #server_info{
+	outline: 2px solid #ffffff;
+}
+
+#view_button#delete_button{
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	margin: 10px 0;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	outline: 2px solid #000000;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 5px;
+}
+
+.dark-mode #view_button#delete_button{
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	margin: 10px 0;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	border-radius: 5px;
+	color: #ffffff;
+	outline: 2px soild #ffffff;
+	background-color: #403b3b;
+}
+
+#server_info_full {
+	outline: 2px solid #000000;
+	border-radius: 5px;
+	margin: 10px 0;
+	padding: 14px 16px;
+	display: block;
+	overflow: auto;
+	width: auto;
+	display: inline-block;
+}
+
+.dark-mode #server_info_full {
+	outline: 2px solid #ffffff;
+}
+
 p#server_name {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 20px;
