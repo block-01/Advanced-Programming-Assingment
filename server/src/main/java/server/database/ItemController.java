@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 
 
+/**
+ * Item controller class for interacting with the database.
+ *
+ * @author Lily Wilks
+ */
 @RestController
 public class ItemController {
 
@@ -31,6 +36,13 @@ public class ItemController {
 		ItemController.itemService = itemService;
 	}
 
+	/**
+	 * Fetches server info from the database and adds it to the model for rendering in the dashboard.
+	 *
+	 * @param id The ID of the item within the database to fetch.
+	 * @param model The Model that the server info is added to.
+	 *
+	 */
 	@GetMapping("/database/{id}")
 	public static void GetItem(
 		@PathVariable("id") long id,
@@ -54,8 +66,21 @@ public class ItemController {
 	@PostMapping("/database/add")
 	public void AddItem(){}
 
+	/**
+	 * FetchServer
+	 *
+	 * Fetches data from the database.
+	 *
+	 * @url /dashboard/fetch_server/{id}
+	 * @method GET
+	 *
+	 * @param id The ID of the row in the Item table.
+	 *
+	 * @return The contents of the row from the Item table
+	 */
 	@GetMapping("/dashboard/fetch_server/{id}")
 	public JSONObject FetchServer(@PathVariable("id") long id){
+
 		Item item = itemService.GetItem(id);
 
 		JSONObject response_json = new JSONObject();
@@ -75,6 +100,14 @@ public class ItemController {
 		return response_json;
 	}
 
+	/**
+	 * GetItemLength
+	 *
+	 * @url /dashboard/fetch_item_table_length
+	 * @method GET
+	 *
+	 * @return The length of the Item table within the database.
+	 */
 	@GetMapping("/dashboard/fetch_item_table_length")
 	public long GetItemLength(){
 		return itemService.GetItemTableLength();
