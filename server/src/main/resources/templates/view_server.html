@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-	<head>
+<head>
 	<link th:href="@{/css/index.css}" rel="stylesheet" />
 	<link th:href="@{/css/add_server.css}" rel="stylesheet" />
 	<link th:href="@{/css/button.css}" rel="stylesheet" />
@@ -10,40 +10,30 @@
 	<link th:href="@{/assets/favicon.ico}" type="image/x-icon" rel="icon" />
 
 	<script th:src="@{/scripts/common_functions.js}" rel="javascript"></script>
-	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			ServerMain();
-		});
-	</script>
-	<script th:src="@{/scripts/darkmode.js}" rel="javascript"></script>
+	<script th:src="@{/scripts/darkmode_server_info.js}" rel="javascript"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			funcCheckDarkModeToggle();
 		});
 	</script>
-	</head>
+</head>
 
-	<button title="Dashboard Home" style="width:auto;">
-		<a th:href="@{/}">
-			<svg id="home_page_button_icon" height="40"width="40" xmlns="http://www.w3.org/2000/svg">
-			</svg>
-		</a>
-	</button>
-
-	<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;">
-		<svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
-		</svg>
-	</button>
-
-	<div id="settings" class="modal">
-		<div class="modal-content animate">
-			<div class="container">
-				<label class="switch" title="Toggle Dark and Light mode">
-					<input type="checkbox" onclick="funcDarkModeToggle()">
-					<span class="slider">Dark/Light mode toggle</span>
-				</label>
-			</div>
+<div id="settings" class="modal">
+	<div class="modal-content animate">
+		<div class="container">
+			<h5>Dark/Light mode toggle</h5>
+			<label class="switch" title="Toggle Dark and Light mode">
+				<input type="checkbox" id="darkmode_toggle" onclick="funcDarkModeToggle()">
+				<span class="slider"></span>
+			</label>
+			<h5>Application info</h5>
+			<dl>
+				<!-- TODO Keep upto date as when versions change -->
+				<dt>Dashboard Version:</dt>
+				<dd>Dev 0.0.0</dd>
+				<dt>Client Version:</dt>
+				<dd>Dev 0.0.0</dd>
+			</dl>
 
 			<div class="container">
 				<button title="Close" type="button" onclick="document.getElementById('settings').style.display='none'"
@@ -52,8 +42,21 @@
 			</div>
 		</div>
 	</div>
+	</div>
 	</body>
-		<div id="server_info_full">
+		<button title="Dashboard Home" style="width:auto;">
+			<a th:href="@{/}">
+				<svg id="home_page_button_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+				</svg>
+			</a>
+		</button>
+
+		<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;">
+			<svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+			</svg>
+		</button>
+
+		<a id="server_info_full">
 			<h4>Server Name: [[${ServerName}]]</h4>
 			<p>Hostname: [[${Hostname}]]</p>
 			<p>OS Version: [[${OsVersion}]]</p>
@@ -66,7 +69,7 @@
 			<p>Minimum CPU Core Clock Speed: [[${CpuCoreClockMin}]]</p>
 			<p>Number of CPU Threads: [[${CpuThreads}]]</p>
 			<p>Size of RAM: [[${Ram}]]</p>
-		</div>
+		</a>
 	<body>
 </html>
 

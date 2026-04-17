@@ -54,7 +54,7 @@ public class Dashboard {
 			item.SetOsHostname("" + data.get("os_hostname"));
 			item.SetOsShell("" + data.get("os_shell"));
 			item.SetOsVersion("" + data.get("os_version"));
-			item.SetNetIP("" + data.get("net_ip"));
+			item.SetNetIP(ServerIP);
 			item.SetNetMacAddress("" + data.get("net_mac_address"));
 			item.SetCpuArch("" + data.get("os_cpu_arch"));
 			item.SetCpuCores("" + data.get("os_cpu_cores"));
