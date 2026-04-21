@@ -51,7 +51,7 @@ def exception(message: str, exception: Exception | None = None) -> None:
     exception_message: str = "\033[1m\033[0;31m" + f"[{time}]EXCEPTION: {message}" + "\033[0m"
 
     if exception:
-        exception_message += str(exception)
+        exception_message += "\033[1m\033[0;31m\n[Reason]: `" + str(exception) + "`\033[0m"
     print(exception_message)
 
 

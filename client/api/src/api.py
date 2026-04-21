@@ -7,6 +7,7 @@ on port 5000.
 from logger import logger
 from sys_info import sys_info
 from flask import Flask, Response, request, jsonify
+from settings import settings
 
 
 app = Flask(__name__)
@@ -38,6 +39,12 @@ def _system_info_full() -> tuple[Response, int]:
     Return:
         Information about the systems OS and hardware.
     """
+    print(settings.settings_path)
+    if (
+        settings.settings_path.exists()
+        or request.environ["REMOTE_ADDR"] not in settings.fetch_settings()
+    ):
+        settings.set_settings_ip(request.environ["REMOTE_ADDR"])
 
     logger.api("/api/info/full", logger.request_type.GET)
     return (

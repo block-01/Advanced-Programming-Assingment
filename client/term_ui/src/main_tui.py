@@ -3,8 +3,9 @@ Functions related to the terminal user interface for managing the server-side ap
 """
 
 from simple_term_menu import TerminalMenu
+import yaml
 from sys_info import sys_info
-import time
+from settings import settings
 
 
 def main_menu() -> bool:
@@ -28,8 +29,7 @@ def main_menu() -> bool:
             if menu == 0:
                 _display_info()
             elif menu == 1:
-                print("Settings selected")
-                time.sleep(5)
+                _settings()
             elif menu == 2:
                 print("Exiting program")
                 return True
@@ -70,6 +70,24 @@ def _display_info():
               user: {sys_info.sys_hardware.ram.usage.used}
         	"""
 
+    options = ["[b] Back to Main Menu"]
+    info_display = TerminalMenu(
+        options,
+        title=info_menu,
+        cycle_cursor=True,
+        clear_screen=True,
+    )
+    info = info_display.show()
+    if info == 0:
+        print("Back Selected")
+        return True
+    return False
+
+
+def _settings():
+    """Settings menu."""
+
+    info_menu: str = f"""{yaml.dump(settings.fetch_settings(), default_flow_style=False)}"""
     options = ["[b] Back to Main Menu"]
     info_display = TerminalMenu(
         options,
