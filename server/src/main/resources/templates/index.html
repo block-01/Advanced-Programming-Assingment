@@ -12,12 +12,17 @@
 	<script th:src="@{/scripts/app_call_functions.js}" rel="javascript"></script>
 	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
 	<script>
+		// Adds servers to the dashboard.
+
 		document.addEventListener("DOMContentLoaded", function () {
 			ServerMain();
 		});
 	</script>
+
 	<script th:src="@{/scripts/darkmode_home.js}" rel="javascript"></script>
 	<script>
+		// checks for if dark mode is enabled.
+
 		document.addEventListener("DOMContentLoaded", function () {
 			funcCheckDarkModeToggle();
 		});

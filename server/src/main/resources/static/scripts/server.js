@@ -60,6 +60,25 @@ async function AddServer(contents, id) {
 		}
 		server_info.append(server_status);
 
+
+		// Fetches the Server Reservation and adds an icon with the reservation info
+
+		server_booking = document.createElement("a");
+		server_booking.id = "server_status";
+		const server_reservation = await FetchServerReservation(contents.os_hostname);
+
+		if (server_reservation) {
+			server_booking.title = "Server: " + contents.os_hostname + "\nReserved by: " + server_reservation.Username + "\nStarting at: " + server_reservation.ReservationStart + "\nFinishing at: " + server_reservation.ReservationEnd + "\nDuration: " + server_reservation.Duration + " hours";
+			server_booking.innerHTML = '<svg id="server_booking_icon_reserved" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/server-booked-light.png" /></svg>';
+
+		}
+		else if (!server_reservation) {
+			server_booking.title = "Server: " + contents.os_hostname + " is currently not reserved.";
+			server_booking.innerHTML = '<svg id="server_booking_icon_free" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/server-un-booked-light.png" /></svg>';
+		}
+
+		server_info.append(server_booking);
+
 		// Adds the name of the server to the server tile on the dashboard.
 		server_name = document.createElement("h4");
 		server_name.id = "server_name";
@@ -281,5 +300,80 @@ async function ServerUptime(server_ip) {
 	} catch (error) {
 		console.error(error.message);
 		return null;
+	}
+}
+
+async function FetchServerReservation(hostname){
+	/* Fetches information about server reservations */
+	try{
+		const ApiResponse = await fetch('http://' + window.location.host + '/reservations/' + hostname, { method: 'GET' });
+
+		if (! ApiResponse.ok){
+			console.error("Unable to fetch server reservation.");
+			return null
+		}
+		const ApiResultText = await ApiResponse.text();
+		if (!ApiResultText || !ApiResultText.trim()) {
+			console.error("Server returned an empty response for hostname:",hostname);
+			return null;
+		}
+
+		const ApiResult = JSON.parse(ApiResultText);
+		return ApiResult;
+	}
+	catch (error){
+		console.error(error.message);
+		return null;
+	}
+}
+
+async function AddServerReservation(hostname) {
+	/* Adds information about server reservations to the view_server page. */
+	try{
+		const server_reservation = await FetchServerReservation(hostname);
+
+		const server_reservation_info_root = document.getElementById("server_reservation_info");
+		const server_reservation_info = document.createElement("a")
+		server_reservation_info.id = "server_info";
+		server_reservation_info_root.append(server_reservation_info);
+
+		reservation_title = document.createElement("h4");
+		reservation_title.innerHTML = "Reservation Status: " + hostname;
+		server_reservation_info.append(reservation_title);
+
+		server_booking = document.createElement("a");
+		if (server_reservation) {
+			server_booking.title = "Server is currently reserved";
+			server_booking.innerHTML = '<svg id="server_booking_icon_reserved" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/server-booked-light.png" /></svg>';
+			server_reservation_info.append(server_booking);
+
+			server_reservation_user = document.createElement("p");
+			server_reservation_user.innerHTML = "Reserved by: " + server_reservation.Username;
+			server_reservation_info.append(server_reservation_user);
+
+			server_reservation_start = document.createElement("p");
+			server_reservation_start.innerHTML = "Started at: " + server_reservation.ReservationStart;
+			server_reservation_info.append(server_reservation_start);
+
+			server_reservation_duration = document.createElement("p");
+			server_reservation_duration.innerHTML = "Reservation Duration: " + server_reservation.Duration + " hours";
+			server_reservation_info.append(server_reservation_duration);
+
+			server_reservation_end = document.createElement("p");
+			server_reservation_end.innerHTML = "Finishing at: " + server_reservation.ReservationEnd;
+			server_reservation_info.append(server_reservation_end);
+		}
+		else if (!server_reservation) {
+			server_booking.title = "Server is currently not reserved.";
+			server_booking.innerHTML = '<svg id="server_booking_icon_free" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><image height="30" width="30" href="/assets/server-un-booked-light.png" /></svg>';
+			server_reservation_info.append(server_booking);
+
+			server_reservation_none = document.createElement("p");
+			server_reservation_none.innerHTML = "Server is currently not reserved";
+			server_reservation_info.append(server_reservation_none);
+		}
+
+	} catch(error){
+		console.error(error.message)
 	}
 }
