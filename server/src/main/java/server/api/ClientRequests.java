@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,9 +31,9 @@ public class ClientRequests {
 	 *
 	 * @return If the client is online.
 	 */
-	@GetMapping("/api/client/status")
+	@GetMapping("/api/client/status/{TargetIP}")
 	public static JSONObject ClientServerStatus(
-		@RequestParam("TargetIP") String ClientIP
+		@PathVariable("TargetIP") String ClientIP
 		){
 
 		String url = ClientIP + "/api/serverstatus";
@@ -327,6 +328,34 @@ public class ClientRequests {
 
 		String url = ClientIP + "/api/reserve-server";
 		JSONObject api = requests.POST(url, ApiInput);
+		if ((int) api.get("statuscode") == 200) {
+			api.remove("statuscode");
+			return api;
+		}
+
+		JSONObject error = new JSONObject();
+		error.put("error", "Unable to fetch: '" + url + "'");
+		return error;
+	}
+
+	/**
+	 * client uptime Api.
+	 *
+	 * @url /api/client/status
+	 * @method GET
+	 *
+	 * @param ClientIP The URL or IP with the port of the target system.
+	 *
+	 * @return How long the server has been online for.
+	 */
+	@GetMapping("/api/client/uptime/{TargetIP}")
+	public static JSONObject ClientServerUptime(
+		@PathVariable("TargetIP") String ClientIP
+		){
+
+		String url = ClientIP + "/api/info/os/usage";
+		JSONObject api = requests.GET(url);
+
 		if ((int) api.get("statuscode") == 200) {
 			api.remove("statuscode");
 			return api;

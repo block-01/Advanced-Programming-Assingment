@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <title>Server side application</title>
 <head>
-	<link th:href="@{/css/side_bar.css}" rel="stylesheet" />
 	<link th:href="@{/css/index.css}" rel="stylesheet"/>
 	<link th:href="@{/css/add_server.css}" rel="stylesheet" />
 	<link th:href="@{/css/button.css}" rel="stylesheet" />
@@ -10,14 +9,14 @@
 
 	<link th:href="@{/assets/favicon.ico}" type="image/x-icon" rel="icon"/>
 
-	<script th:src="@{/scripts/common_functions.js}" rel="javascript"></script>
+	<script th:src="@{/scripts/app_call_functions.js}" rel="javascript"></script>
 	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			ServerMain();
 		});
 	</script>
-	<script th:src="@{/scripts/darkmode.js}" rel="javascript"></script>
+	<script th:src="@{/scripts/darkmode_home.js}" rel="javascript"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			funcCheckDarkModeToggle();
