@@ -21,7 +21,6 @@ public class ServerSideAPI {
 	 */
 	@GetMapping("/api/dashboard-status")
 	public int DashboardStatus(){
-
 		return 200;
 	}
 }

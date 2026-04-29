@@ -16,6 +16,12 @@
 			funcCheckDarkModeToggle();
 		});
 	</script>
+	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", async function () {
+			await AddServerReservationInfo("[[${Hostname}]]");
+		});
+	</script>
 </head>
 
 <div id="settings" class="modal">
@@ -44,32 +50,37 @@
 	</div>
 	</div>
 	</body>
-		<button title="Dashboard Home" style="width:auto;">
-			<a th:href="@{/}">
-				<svg id="home_page_button_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+		<div>
+			<button title="Dashboard Home" style="width:auto;">
+				<a th:href="@{/}">
+					<svg id="home_page_button_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+					</svg>
+				</a>
+			</button>
+
+			<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;">
+				<svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
 				</svg>
+			</button>
+		</div>
+		<div>
+			<a id="server_info_full">
+				<h4>Server Name: [[${ServerName}]]</h4>
+				<p>Hostname: [[${Hostname}]]</p>
+				<p>OS Version: [[${OsVersion}]]</p>
+				<p>Shell Type: [[${OsShell}]]</p>
+				<p>Device IP: [[${NetIP}]]</p>
+				<p>Device Mac Address: [[${NetMacAddress}]]</p>
+				<p>CPU Architecture: [[${CpuArch}]]</p>
+				<p>CPU Core Count: [[${CpuCores}]]</p>
+				<p>Maximum CPU Core Clock Speed: [[${CpuCoreClockMax}]]</p>
+				<p>Minimum CPU Core Clock Speed: [[${CpuCoreClockMin}]]</p>
+				<p>Number of CPU Threads: [[${CpuThreads}]]</p>
+				<p>Size of RAM: [[${Ram}]]</p>
 			</a>
-		</button>
+			<div id="server_reservation_info"></div>
+		</div>
 
-		<button title="Settings" onclick="document.getElementById('settings').style.display='block'" style="width:auto;">
-			<svg id="settings_icon" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
-			</svg>
-		</button>
-
-		<a id="server_info_full">
-			<h4>Server Name: [[${ServerName}]]</h4>
-			<p>Hostname: [[${Hostname}]]</p>
-			<p>OS Version: [[${OsVersion}]]</p>
-			<p>Shell Type: [[${OsShell}]]</p>
-			<p>Device IP: [[${NetIP}]]</p>
-			<p>Device Mac Address: [[${NetMacAddress}]]</p>
-			<p>CPU Architecture: [[${CpuArch}]]</p>
-			<p>CPU Core Count: [[${CpuCores}]]</p>
-			<p>Maximum CPU Core Clock Speed: [[${CpuCoreClockMax}]]</p>
-			<p>Minimum CPU Core Clock Speed: [[${CpuCoreClockMin}]]</p>
-			<p>Number of CPU Threads: [[${CpuThreads}]]</p>
-			<p>Size of RAM: [[${Ram}]]</p>
-		</a>
 	<body>
 </html>
 

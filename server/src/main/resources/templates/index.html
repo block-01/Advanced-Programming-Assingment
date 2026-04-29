@@ -9,18 +9,43 @@
 
 	<link th:href="@{/assets/favicon.ico}" type="image/x-icon" rel="icon"/>
 
-	<script th:src="@{/scripts/app_call_functions.js}" rel="javascript"></script>
 	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
 	<script>
+		// Adds servers to the dashboard.
+
 		document.addEventListener("DOMContentLoaded", function () {
 			ServerMain();
 		});
 	</script>
+
 	<script th:src="@{/scripts/darkmode_home.js}" rel="javascript"></script>
 	<script>
+		// checks for if dark mode is enabled.
+
 		document.addEventListener("DOMContentLoaded", function () {
 			funcCheckDarkModeToggle();
 		});
+	</script>
+
+	<script>
+		// Checks for any issues that occurred while trying to add a server to the dashboard.
+
+		if ("[[${add_server_status_localhost}]]") {
+			alert("Cannot use 'localhost' to add a server to the dashboard.");
+			window.location.href = "/";
+		}
+		if ("[[${add_server_status_exists}]]") {
+			alert("[[${server_name}]] already exists.");
+			window.location.href = "/";
+		}
+		if ("[[${add_server_status_not_found}]]") {
+			alert("[[${server_name}]] can either not be found, the client application or server is offline.");
+			window.location.href = "/";
+		}
+		if ("[[${add_server_status_error}]]") {
+			alert("ERROR: Failed to add [[${server_name}]].");
+			window.location.href = "/";
+		}
 	</script>
 </head>
 
