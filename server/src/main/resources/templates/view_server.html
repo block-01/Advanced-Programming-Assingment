@@ -19,7 +19,7 @@
 	<script th:src="@{/scripts/server.js}" rel="javascript"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", async function () {
-			await AddServerReservation("[[${Hostname}]]");
+			await AddServerReservationInfo("[[${Hostname}]]");
 		});
 	</script>
 </head>

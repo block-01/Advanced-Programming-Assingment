@@ -70,6 +70,7 @@ public class ReservationController {
 			return response_json;
 		}
 		catch(Exception e) {
+			System.err.println(e);
 			return null;
 		}
 	}

@@ -4,7 +4,6 @@ package server.api;
 import java.util.HashMap;
 
 import org.json.simple.JSONObject;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,18 +34,23 @@ public class ClientRequests {
 	public static JSONObject ClientServerStatus(
 		@PathVariable("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/serverstatus";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/serverstatus";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -63,18 +67,23 @@ public class ClientRequests {
 	public static JSONObject ClientFullInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/full";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/full";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch(Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -91,18 +100,23 @@ public class ClientRequests {
 	public JSONObject ClientOsInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/os";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/os";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -119,18 +133,23 @@ public class ClientRequests {
 	public JSONObject ClientOsUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/os/usage";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/os/usage";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -147,18 +166,23 @@ public class ClientRequests {
 	public JSONObject ClientOsNetworkInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/os/network";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/os/network";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -175,18 +199,23 @@ public class ClientRequests {
 	public JSONObject ClientHardwareInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/hardware";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/hardware";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -204,17 +233,23 @@ public class ClientRequests {
 			@RequestParam("TargetIP") String ClientIP
 		){
 
-		String url = ClientIP + "/api/info/hardware/cpu";
-		JSONObject api = requests.GET(url);
+		try{
+			String url = ClientIP + "/api/info/hardware/cpu";
+			JSONObject api = requests.GET(url);
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
+
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -231,19 +266,23 @@ public class ClientRequests {
 	public JSONObject ClientHardwareCpuUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/hardware/cpu/usage";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/hardware/cpu/usage";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
-
 	}
 
 	/**
@@ -260,18 +299,23 @@ public class ClientRequests {
 	public JSONObject ClientHardwareRamInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/hardware/ram";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/hardware/ram";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -288,18 +332,23 @@ public class ClientRequests {
 	public JSONObject ClientHardwareRamUsageInfo(
 			@RequestParam("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/hardware/ram/usage";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/hardware/ram/usage";
-		JSONObject api = requests.GET(url);
+			if ((int)api.get("statuscode") == 200){
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int)api.get("statuscode") == 200){
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error","Unable to fetch: '"+url+"'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error","Unable to fetch: '"+url+"'");
-		return error;
 	}
 
 	/**
@@ -321,21 +370,26 @@ public class ClientRequests {
 			@RequestParam("Username") String Username,
 			@RequestParam("Duration") int Duration
 	){
+		try{
+			HashMap<String,String> ApiInput = new HashMap<String,String>();
+			ApiInput.put("username", Username);
+			ApiInput.put("duration", "" + Duration);
 
-		HashMap<String,String> ApiInput = new HashMap<String,String>();
-		ApiInput.put("username", Username);
-		ApiInput.put("duration", "" + Duration);
+			String url = ClientIP + "/api/reserve-server";
+			JSONObject api = requests.POST(url, ApiInput);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		String url = ClientIP + "/api/reserve-server";
-		JSONObject api = requests.POST(url, ApiInput);
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 
 	/**
@@ -352,17 +406,22 @@ public class ClientRequests {
 	public static JSONObject ClientServerUptime(
 		@PathVariable("TargetIP") String ClientIP
 		){
+		try{
+			String url = ClientIP + "/api/info/os/usage";
+			JSONObject api = requests.GET(url);
 
-		String url = ClientIP + "/api/info/os/usage";
-		JSONObject api = requests.GET(url);
+			if ((int) api.get("statuscode") == 200) {
+				api.remove("statuscode");
+				return api;
+			}
 
-		if ((int) api.get("statuscode") == 200) {
-			api.remove("statuscode");
-			return api;
+			JSONObject error = new JSONObject();
+			error.put("error", "Unable to fetch: '" + url + "'");
+			return error;
+
+		} catch(Exception e) {
+			System.err.println(e);
+			return null;
 		}
-
-		JSONObject error = new JSONObject();
-		error.put("error", "Unable to fetch: '" + url + "'");
-		return error;
 	}
 }

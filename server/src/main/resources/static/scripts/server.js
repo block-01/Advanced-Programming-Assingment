@@ -348,7 +348,7 @@ async function FetchServerReservation(hostname){
 	}
 }
 
-async function AddServerReservation(hostname) {
+async function AddServerReservationInfo(hostname) {
 	/* Adds information about server reservations to the view_server page. */
 	try{
 		// Fetch server reservation info.
