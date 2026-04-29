@@ -56,7 +56,11 @@ def remove_reservation(ip: str | None) -> bool:
 
 
 def return_reservations(ip: str | None) -> None:
-    """_summary_"""
+    """Fetch all of the server reservations.
+
+    Args:
+        ip: The IP address of the dashboard to fetch the server reservations from.
+    """
     try:
         if ip:
             server_reservations: requests.Response = requests.get(
