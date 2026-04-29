@@ -9,13 +9,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.websocket.server.PathParam;
 import server.models.Reservation;
 import server.repository.ReservationRepository;
 import server.services.ReservationService;
@@ -173,6 +173,33 @@ public class ReservationFuncs {
 			System.err.println("ERROR: " + e);
 
 			return null;
+		}
+	}
+
+	/**
+	 * Checks to see if a server is already reserved or not.
+	 *
+	 * @url /reservation/delete/{Hostname}
+	 * @method DELETE
+	 *
+	 * @param Hostname The name of the server that the reservation is being removed.
+	 *
+	 * @return If the reservation had expired or not.
+	 */
+	@DeleteMapping("/reservations/delete/{Hostname}")
+	public boolean DeleteServerReservation(@PathVariable("Hostname") String Hostname) {
+		try {
+			Reservation record = ReservationRepo.findbyserver_name(Hostname);
+
+			if (record != null) {
+				ReservationRepo.deleteById(record.GetID());
+				return true;
+			}
+			return false;
+
+		} catch (Exception e) {
+			System.err.println("ERROR: " + e);
+			return false;
 		}
 	}
 
