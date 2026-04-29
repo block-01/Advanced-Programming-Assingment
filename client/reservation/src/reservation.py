@@ -37,7 +37,7 @@ def reserve(duration: int, ip: str | None) -> bool:
 
 
 def remove_reservation(ip: str | None) -> bool:
-    """Removes the reservation from the server
+    """Removes the reservation from the server.
 
     Args:
         ip: The IP address of the server that is being unreserved.
@@ -46,17 +46,40 @@ def remove_reservation(ip: str | None) -> bool:
         bool: If the server was successfully unreserved or not.
     """
     try:
-        if not ip:
+        if ip:
+            if _check_dashboard_status(ip):
+                delete_reservation = requests.delete(
+                    f"http://{ip}:25580/reservations/delete/{hostname}"
+                )
+
+                if delete_reservation.status_code != 200:
+                    print(
+                        "Failed to remove reservation.\nReservation either doesn't exist or an error occurred."
+                    )
+                    return False
+
+                print(f"Server reservation for {hostname} has been removed.")
+                return True
+
+            print(
+                "Failed to remove reservation due to the Dashboard being either offline or unable to communicate with it."
+            )
             return False
-        return True
+
+        print("Failed to remove reservation as this client doesn't communicate any Dashboard.")
+        return False
 
     except Exception as e:
-        logger.exception("Failed to remove the reservation from the server", e)
+        logger.exception("An exception occurred while trying to remove the reservation.", e)
         return False
 
 
 def return_reservations(ip: str | None) -> None:
-    """_summary_"""
+    """Fetch all of the server reservations.
+
+    Args:
+        ip: The IP address of the dashboard to fetch the server reservations from.
+    """
     try:
         if ip:
             server_reservations: requests.Response = requests.get(
