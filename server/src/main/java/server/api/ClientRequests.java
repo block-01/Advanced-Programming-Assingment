@@ -22,7 +22,7 @@ import requests.requests;
 public class ClientRequests {
 
 	/**
-	 * client status Api.
+	 * Fetches the status of the remote client using the Api.
 	 *
 	 * @url /api/client/status
 	 * @method GET
@@ -50,7 +50,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * Info Api.
+	 * Fetches system Info using the info Api from the remote client.
 	 *
 	 * @url /api/client/info
 	 * @method GET
@@ -78,7 +78,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * OS info Api.
+	 * Fetches info about the OS using the OS info Api from the remote client.
 	 *
 	 * @url /api/client/info/os
 	 * @method GET
@@ -106,7 +106,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * OS usage Api.
+	 * Fetches info about the OS usage from the OS usage info Api from the remote client.
 	 *
 	 * @url /api/client/info/os/usage
 	 * @method GET
@@ -134,7 +134,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * Network info Api.
+	 * Fetches Network info using the Network Info Api from the remote client.
 	 *
 	 * @url /api/client/info/os/network
 	 * @method GET
@@ -162,7 +162,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * Hardware info Api.
+	 * Fetches Hardware info using the Hardware info Api from the remote client.
 	 *
 	 * @url /api/client/info/hardware
 	 * @method GET
@@ -190,7 +190,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * CPU info Api.
+	 * Fetches the CPU info using the CPU info Api from the remote client.
 	 *
 	 * @url /api/client/info/hardware/cpu
 	 * @method GET
@@ -218,7 +218,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * CPU usage Api.
+	 * Fetches CPU usage Info using the CPU usage Info Api from the remote client.
 	 *
 	 * @url /api/client/info/hardware/cpu/usage
 	 * @method GET
@@ -247,7 +247,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * RAM Info Api.
+	 * Fetches the RAM Info using the RAM Info Api from the remote client.
 	 *
 	 * @url /api/client/info/hardware/ram
 	 * @method GET
@@ -275,7 +275,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * RAM usage Api.
+	 * Fetches RAM usage Info using the RAM usage Info Api from the remote client.
 	 *
 	 * @url /api/client/info/hardware/ram/usage
 	 * @method GET
@@ -303,11 +303,11 @@ public class ClientRequests {
 	}
 
 	/**
-	 * Server reservation Api.
+	 * Reserves a Server using the Api on the remote client.
 	 *
 	 * @url /api/client/reserve_server
 	 * @method POST
-
+	 *
 	 *
 	 * @param ClientIP  The URL or IP with the port of the target system.
 	 * @param Username: The name of the user who wants to book the server.
@@ -339,7 +339,7 @@ public class ClientRequests {
 	}
 
 	/**
-	 * client uptime Api.
+	 * Fetches Client uptime using the Client uptime Api from the remote client.
 	 *
 	 * @url /api/client/status
 	 * @method GET

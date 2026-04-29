@@ -24,9 +24,6 @@ public class Dashboard {
 	ItemRepository ItemRepo;
 	private ItemService itemService;
 
-	/**
-	 *
-	 */
 	public Dashboard(ItemService itemService) {
 		this.itemService = itemService;
 	}

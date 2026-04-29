@@ -2,7 +2,7 @@
 
 This directory contains the server application that the dashboard requests data from.
 
-## Setup
+## Setup and execution
 
 ### Dependencies
 

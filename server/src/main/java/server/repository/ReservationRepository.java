@@ -21,6 +21,11 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	@Query(value = "SELECT * FROM reservation WHERE server_name=?", nativeQuery = true)
 	Reservation findbyserver_name(String server_name);
 
+	/**
+	 * Fetches all records within the databases reservations table.
+	 *
+	 * @return All Servers in the reservations table.
+	 */
 	@Query(value = "SELECT * FROM reservation", nativeQuery = true)
 	Reservation findbyservers();
 }
