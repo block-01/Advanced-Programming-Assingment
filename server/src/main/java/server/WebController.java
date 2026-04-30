@@ -11,6 +11,7 @@ import server.database.ItemController;
  * Web Controller Class for page mapping
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @Controller
 public class WebController {

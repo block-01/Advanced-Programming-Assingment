@@ -22,6 +22,7 @@ import org.springframework.ui.Model;
  * Item controller class for interacting with the database.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @RestController
 public class ItemController {

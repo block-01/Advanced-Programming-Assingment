@@ -24,6 +24,7 @@ import server.services.ReservationService;
  * Functions for server reservation.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @RestController
 public class ReservationFuncs {

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Server Side API functions for dashboard interactions.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @RestController
 public class ServerSideAPI {

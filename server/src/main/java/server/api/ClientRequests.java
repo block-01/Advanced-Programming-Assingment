@@ -17,6 +17,7 @@ import requests.requests;
  * API calls to make requests to the server clients.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 public class ClientRequests {
 

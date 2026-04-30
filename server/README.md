@@ -47,7 +47,7 @@ spring-boot:run -Dspring-boot.run.profiles=prod --file server/pom.xml
 ### Java
 
 ```shell
-java -jar server/target/Server-list-application-0.1-dev.jar
+java -jar server/target/Server-list-application-1.0.0.jar
 ```
 
 ## Database

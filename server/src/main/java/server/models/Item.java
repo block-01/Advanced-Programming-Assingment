@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
  * The Datatype and related functions for the Item table within the database.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @Entity
 public class Item {

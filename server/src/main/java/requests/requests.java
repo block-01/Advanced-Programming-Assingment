@@ -14,9 +14,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
 /**
- * Class of functions related to making API requests.
+ * Class of functions related to making requests to remote APIs.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 public class requests {
 
