@@ -33,13 +33,11 @@ accepted_durations: list = [
     24,
 ]
 if __name__ == "__main__":
-    arg_pars: ArgumentParser = (
-        ArgumentParser(  # TODO: Come up with a good description for the application
-            description="""
-		Server management:
-		The client that connects to the server.
+    arg_pars: ArgumentParser = ArgumentParser(
+        description="""
+		Server management and information client:
+		This is the client that the sends data and information to the central dashboard application.
 		"""
-        )
     )
     settings.fetch_settings()
     arg_pars.add_argument(
@@ -51,7 +49,7 @@ if __name__ == "__main__":
     arg_pars.add_argument(
         "--reserve",
         "-r",
-        help="Opens up the applications configuration menu",
+        help="Reserves a server for a specified duration",
         type=int,
         choices=accepted_durations,
     )
@@ -65,6 +63,13 @@ if __name__ == "__main__":
     arg_pars.add_argument(
         "--rmr",
         help="Remove the reservation for the current server.",
+        action="store_true",
+    )
+
+    arg_pars.add_argument(
+        "--version",
+        "-v",
+        help="Returns the applications Version",
         action="store_true",
     )
 
@@ -87,6 +92,10 @@ if __name__ == "__main__":
 
     if args.rmr:
         reservation.remove_reservation(settings.get_settings_ip())
+        sys.exit(0)
+
+    if args.version:
+        print("Running Client version: 1.0.0\nDate: 29/04/2026")
         sys.exit(0)
 
     if args.settings:
