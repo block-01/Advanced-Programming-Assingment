@@ -9,6 +9,7 @@ import server.models.Reservation;
  * Interface for interacting with the Reservations Database.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 

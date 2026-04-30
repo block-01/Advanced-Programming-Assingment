@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.websocket.server.PathParam;
 import server.models.Reservation;
 import server.repository.ReservationRepository;
 import server.services.ReservationService;
@@ -24,6 +23,7 @@ import server.services.ReservationService;
  * Functions for server reservation.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @RestController
 public class ReservationFuncs {

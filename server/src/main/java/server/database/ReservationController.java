@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Reservation controller class for interacting with the database.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @RestController
 public class ReservationController {

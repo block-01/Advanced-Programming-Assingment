@@ -10,9 +10,11 @@ import jakarta.persistence.Id;
 /**
  * Reservation datatype
  *
- * The Datatype and related functions for the Reservation table within the database.
+ * The Datatype and related functions for the Reservation table within the
+ * database.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @Entity
 public class Reservation {

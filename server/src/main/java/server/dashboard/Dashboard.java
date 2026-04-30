@@ -16,6 +16,7 @@ import server.repository.ItemRepository;
  * Functions and API calls used by the frontend dashboard.
  *
  * @author Lily Wilks
+ * @since 1.0.0
  */
 @Controller
 public class Dashboard {
@@ -33,7 +34,6 @@ public class Dashboard {
 	 *
 	 * @url /dashboard/add_server
 	 * @method POST
-
 	 *
 	 * @param ServerName The name of the target server.
 	 * @param ServerIP The DNS name or IP address of the server.
