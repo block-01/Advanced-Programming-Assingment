@@ -127,16 +127,16 @@ def _reserve_server_API(ip: str, duration: int) -> bool:
        bool: If the dashboard is online or not
     """
     try:
-        dashboard_status = requests.post(
+        reservation = requests.post(
             f"http://{ip}:25580/reservation/add",
             {"Username": username, "Duration": duration, "Hostname": hostname},
         )
 
-        if dashboard_status.status_code == 500:
+        if reservation.status_code == 500:
             print("Failed to reserve server, please try again later.")
             return False
 
-        if dashboard_status.status_code != 200:
+        if reservation.status_code != 200:
             logger.warning(f"Dashboard at `{ip}:25580` is not online.")
             return False
 
