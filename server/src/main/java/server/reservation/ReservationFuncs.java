@@ -89,7 +89,7 @@ public class ReservationFuncs {
 	 * @param Hostname The name of the server being reserved.
 	 * @param ReservationDateTime The date and time the server was reserved.
 	 *
-	 * @return
+	 * @return If the server was reserved correctly.
 	 */
 	private boolean ReserverServerFunc(
 			String Username,
