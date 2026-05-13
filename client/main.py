@@ -95,7 +95,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     if args.version:
-        print("Running Client version: 1.0.0\nDate: 29/04/2026")
+        print("Running Client version: 1.0.1\nDate: 13/05/2026")
         sys.exit(0)
 
     if args.settings:
